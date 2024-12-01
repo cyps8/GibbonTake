@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddcm6wnr6e8xo"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/MainMenu.gd" id="1_5c6j4"]
+[ext_resource type="Theme" uid="uid://dits1em4vvtmn" path="res://Resources/Themes/main_theme.tres" id="2_6plgk"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_5c6j4")
+
+[node name="c" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_6plgk")
+
+[node name="Start" type="Button" parent="c"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 166.0
+offset_right = 423.0
+offset_bottom = 267.0
+text = "START"
+
+[node name="Options" type="Button" parent="c"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 303.0
+offset_right = 423.0
+offset_bottom = 404.0
+text = "OPTIONS"
+
+[node name="Exit" type="Button" parent="c"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 431.0
+offset_right = 423.0
+offset_bottom = 532.0
+text = "EXIT"
+
+[connection signal="pressed" from="c/Start" to="." method="StartPressed"]
+[connection signal="pressed" from="c/Options" to="." method="OptionsPressed"]
+[connection signal="pressed" from="c/Exit" to="." method="ExitPressed"]
