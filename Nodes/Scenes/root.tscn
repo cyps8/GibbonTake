@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctowc83yhrys3"]
+[gd_scene load_steps=9 format=3 uid="uid://ctowc83yhrys3"]
 
 [ext_resource type="Script" path="res://Scripts/root.gd" id="1_v1f3b"]
 [ext_resource type="PackedScene" uid="uid://b67objofffata" path="res://Nodes/Scenes/game.tscn" id="2_1o11g"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://dits1em4vvtmn" path="res://Resources/Themes/main_theme.tres" id="3_osjqd"]
 [ext_resource type="Script" path="res://Scripts/Menus/VolumeSlider.gd" id="6_lals1"]
 [ext_resource type="Script" path="res://Scripts/SFXPlayer.gd" id="7_8th76"]
+[ext_resource type="PackedScene" uid="uid://cjypkrbhpkd10" path="res://Blender files/ApeIsland.blend" id="8_rdn0p"]
 
 [node name="Root" type="Node"]
 process_mode = 3
@@ -143,4 +144,8 @@ script = ExtResource("7_8th76")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="ApeIsland" parent="." instance=ExtResource("8_rdn0p")]
+
 [connection signal="pressed" from="OptionsMenu/c/Panel/Back" to="OptionsMenu" method="BackPressed"]
+
+[editable path="ApeIsland"]
