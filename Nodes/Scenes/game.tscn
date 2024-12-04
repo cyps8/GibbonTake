@@ -1,14 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://b67objofffata"]
+[gd_scene load_steps=31 format=3 uid="uid://b67objofffata"]
 
 [ext_resource type="Script" path="res://Scripts/Game/GameManager.gd" id="1_kg5ow"]
 [ext_resource type="Script" path="res://Scripts/Menus/Pause.gd" id="2_wp568"]
 [ext_resource type="Theme" uid="uid://dits1em4vvtmn" path="res://Resources/Themes/main_theme.tres" id="2_wu3ge"]
+[ext_resource type="PackedScene" uid="uid://b2a8ai5ore4hm" path="res://Nodes/item.tscn" id="5_2a8bf"]
+[ext_resource type="Script" path="res://Scripts/Game/Gameplay.gd" id="5_fyqy3"]
+[ext_resource type="Script" path="res://Scripts/Game/Inventory.gd" id="5_i1b0s"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="7_oayf1"]
+[ext_resource type="Resource" uid="uid://timwwk3xima" path="res://Resources/Items/TestItem2.tres" id="8_17ljt"]
+[ext_resource type="Resource" uid="uid://w57am33r17lp" path="res://Resources/Items/TestItem.tres" id="8_m7ge7"]
+[ext_resource type="FontFile" uid="uid://cai8wo1tl3hn1" path="res://Assets/Art/Fonts/Gambado Sans Forte.ttf" id="9_4fqgx"]
+[ext_resource type="Texture2D" uid="uid://bpkfi0peeem7v" path="res://Assets/Art/UI/item selection paper landscape.png" id="9_utulr"]
+[ext_resource type="Resource" uid="uid://dkgaoemmq4xdf" path="res://Resources/Items/TestItem3.tres" id="9_vw6b0"]
+[ext_resource type="Texture2D" uid="uid://b7swl1klf0mor" path="res://Assets/Art/UI/item selection circle.png" id="10_v7vgk"]
+[ext_resource type="Texture2D" uid="uid://dv380ytd6gkrw" path="res://Assets/Art/UI/tick1.png" id="11_o03g7"]
+[ext_resource type="Texture2D" uid="uid://c753t08jpylsf" path="res://Assets/Art/UI/item selection tickbox_grey.png" id="11_v2vnh"]
+[ext_resource type="Texture2D" uid="uid://xia0bpupbloe" path="res://Assets/Art/UI/item selection tickbox pressed state.png" id="12_hs4pd"]
+[ext_resource type="Texture2D" uid="uid://dxbdyc2errahv" path="res://Assets/Art/UI/tick2.png" id="12_ot7ao"]
+[ext_resource type="Texture2D" uid="uid://camxjj63qa07y" path="res://Assets/Art/UI/item selection tickbox.png" id="13_jbgsf"]
+[ext_resource type="Texture2D" uid="uid://ch4t710m6ke7a" path="res://Assets/Art/UI/tick3.png" id="13_x7i0e"]
+[ext_resource type="Texture2D" uid="uid://cnktg38agki07" path="res://Assets/Art/UI/cross1.png" id="14_qra74"]
+[ext_resource type="Texture2D" uid="uid://1i0wn6okr5xa" path="res://Assets/Art/UI/cross2.png" id="15_ec83r"]
+[ext_resource type="Texture2D" uid="uid://bj2vnx70ffyi" path="res://Assets/Art/UI/monkey opinion sheet paper.png" id="16_c16ci"]
+[ext_resource type="Texture2D" uid="uid://bcmix5v06v2eo" path="res://Assets/Art/UI/cross3.png" id="16_xhd3u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lr3ix"]
+bg_color = Color(0.875, 0.857197, 0.841919, 1)
+
+[sub_resource type="Theme" id="Theme_frco7"]
+default_font = ExtResource("9_4fqgx")
+Panel/styles/panel = SubResource("StyleBoxFlat_lr3ix")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_shg7a"]
+texture = ExtResource("11_v2vnh")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_34wyl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7e4uj"]
+texture = ExtResource("12_hs4pd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pkolx"]
+texture = ExtResource("13_jbgsf")
+
+[sub_resource type="Theme" id="Theme_28qkg"]
+Button/styles/disabled = SubResource("StyleBoxTexture_shg7a")
+Button/styles/focus = SubResource("StyleBoxEmpty_34wyl")
+Button/styles/hover = SubResource("StyleBoxTexture_7e4uj")
+Button/styles/normal = SubResource("StyleBoxTexture_pkolx")
+Button/styles/pressed = SubResource("StyleBoxTexture_7e4uj")
 
 [node name="Game" type="Node"]
 script = ExtResource("1_kg5ow")
 
 [node name="Pause" type="CanvasLayer" parent="."]
 layer = 25
+visible = false
 script = ExtResource("2_wp568")
 
 [node name="c" type="Control" parent="Pause"]
@@ -61,6 +107,207 @@ offset_bottom = 318.0
 text = "MAIN MENU
 "
 
+[node name="Gameplay" type="CanvasLayer" parent="."]
+script = ExtResource("5_fyqy3")
+itemIns = ExtResource("5_2a8bf")
+itemList = Array[ExtResource("7_oayf1")]([ExtResource("8_m7ge7"), ExtResource("8_17ljt"), ExtResource("9_vw6b0")])
+
+[node name="c" type="Control" parent="Gameplay"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_frco7")
+
+[node name="Inventory" type="Panel" parent="Gameplay/c"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_i1b0s")
+ticks = Array[Texture2D]([ExtResource("11_o03g7"), ExtResource("12_ot7ao"), ExtResource("13_x7i0e")])
+crosses = Array[Texture2D]([ExtResource("14_qra74"), ExtResource("15_ec83r"), ExtResource("16_xhd3u")])
+
+[node name="ItemSelectionPaperLandscape" type="TextureRect" parent="Gameplay/c/Inventory"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("9_utulr")
+
+[node name="Circle" type="TextureRect" parent="Gameplay/c/Inventory"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("10_v7vgk")
+
+[node name="Description" type="Control" parent="Gameplay/c/Inventory"]
+anchors_preset = 0
+offset_left = 664.0
+offset_top = 795.0
+offset_right = 1189.0
+offset_bottom = 973.0
+
+[node name="Name" type="Label" parent="Gameplay/c/Inventory/Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 14.0
+offset_right = 532.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "NAME"
+
+[node name="Desc" type="Label" parent="Gameplay/c/Inventory/Description"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 69.0
+offset_right = 529.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "NAME"
+
+[node name="GiveItem" type="Button" parent="Gameplay/c/Inventory"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 656.0
+offset_top = -262.0
+offset_right = 800.0
+offset_bottom = -131.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_28qkg")
+
+[node name="SelectedCircle" type="Panel" parent="Gameplay/c/Inventory"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1353.0
+offset_top = 777.0
+offset_right = 1552.0
+offset_bottom = 967.0
+
+[node name="Bag" type="Panel" parent="Gameplay/c/Inventory"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 552.0
+offset_top = 98.0
+offset_right = 1757.0
+offset_bottom = 753.0
+
+[node name="Clues" type="TextureButton" parent="Gameplay/c/Inventory"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 156.0
+offset_right = 649.0
+offset_bottom = 871.0
+texture_normal = ExtResource("16_c16ci")
+
+[node name="Day1Item" type="TextureRect" parent="Gameplay/c/Inventory/Clues"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 240.0
+offset_right = 144.0
+offset_bottom = 326.0
+expand_mode = 1
+
+[node name="Day1Color" type="TextureRect" parent="Gameplay/c/Inventory/Clues"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 227.0
+offset_right = 259.0
+offset_bottom = 313.0
+expand_mode = 1
+
+[node name="Day1Shape" type="TextureRect" parent="Gameplay/c/Inventory/Clues"]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 209.0
+offset_right = 389.0
+offset_bottom = 295.0
+expand_mode = 1
+
+[node name="Day1Material" type="TextureRect" parent="Gameplay/c/Inventory/Clues"]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 199.0
+offset_right = 526.0
+offset_bottom = 285.0
+expand_mode = 1
+
+[node name="Day2Item" type="TextureRect" parent="Gameplay/c/Inventory/Clues"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 387.0
+offset_right = 166.0
+offset_bottom = 473.0
+expand_mode = 1
+
+[node name="Day2Color" type="TextureRect" parent="Gameplay/c/Inventory/Clues"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 378.0
+offset_right = 290.0
+offset_bottom = 464.0
+expand_mode = 1
+
+[node name="Day2Shape" type="TextureRect" parent="Gameplay/c/Inventory/Clues"]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 361.0
+offset_right = 409.0
+offset_bottom = 447.0
+expand_mode = 1
+
+[node name="Day2Material" type="TextureRect" parent="Gameplay/c/Inventory/Clues"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 347.0
+offset_right = 552.0
+offset_bottom = 433.0
+expand_mode = 1
+
+[node name="Day3Item" type="TextureRect" parent="Gameplay/c/Inventory/Clues"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 541.0
+offset_right = 196.0
+offset_bottom = 627.0
+expand_mode = 1
+
+[node name="Day3Item2" type="TextureRect" parent="Gameplay/c/Inventory/Clues"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 537.0
+offset_right = 319.0
+offset_bottom = 623.0
+expand_mode = 1
+
+[node name="Day3Item3" type="TextureRect" parent="Gameplay/c/Inventory/Clues"]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 533.0
+offset_right = 418.0
+offset_bottom = 619.0
+expand_mode = 1
+
+[node name="Day3Item4" type="TextureRect" parent="Gameplay/c/Inventory/Clues"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 521.0
+offset_right = 538.0
+offset_bottom = 607.0
+expand_mode = 1
+
 [connection signal="pressed" from="Pause/c/Panel/Resume" to="Pause" method="ResumePressed"]
 [connection signal="pressed" from="Pause/c/Panel/Options" to="Pause" method="OptionsPressed"]
 [connection signal="pressed" from="Pause/c/Panel/MainMenu" to="Pause" method="MainMenuPressed"]
+[connection signal="pressed" from="Gameplay/c/Inventory/GiveItem" to="Gameplay/c/Inventory" method="GiveItem"]
