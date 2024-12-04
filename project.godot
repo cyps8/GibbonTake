@@ -13,7 +13,13 @@ config_version=5
 config/name="GibbonTake"
 run/main_scene="res://Nodes/Scenes/root.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://Assets/Art/Other/icon.svg"
+config/icon="res://Assets/Art/UI/Logo.png"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/always_on_top=true
 
 [file_customization]
 

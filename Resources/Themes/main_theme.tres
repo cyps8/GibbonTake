@@ -1,3 +1,6 @@
-[gd_resource type="Theme" format=3 uid="uid://dits1em4vvtmn"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dits1em4vvtmn"]
+
+[ext_resource type="FontFile" uid="uid://cai8wo1tl3hn1" path="res://Assets/Art/Fonts/Gambado Sans Forte.ttf" id="1_8pb5x"]
 
 [resource]
+default_font = ExtResource("1_8pb5x")
