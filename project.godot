@@ -34,6 +34,10 @@ folder_colors={
 "res://Scripts/Shaders/": "purple"
 }
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 Pause={

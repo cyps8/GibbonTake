@@ -33,3 +33,7 @@ func SubmitItem(item: ItemData):
 	if currentDay > 3:
 		return
 	Inventory.ins.AddClue(currentDay, item, item.color == wantedItem.color, item.shape == wantedItem.shape, item.material == wantedItem.material)
+
+
+func _on_clues_ready() -> void:
+	$c/Music_Beach.play()

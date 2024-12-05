@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddcm6wnr6e8xo"]
+[gd_scene load_steps=5 format=3 uid="uid://ddcm6wnr6e8xo"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/MainMenu.gd" id="1_5c6j4"]
 [ext_resource type="Theme" uid="uid://dits1em4vvtmn" path="res://Resources/Themes/main_theme.tres" id="2_6plgk"]
+[ext_resource type="AudioStream" uid="uid://1f578wkx73cs" path="res://Assets/Audio/SFX/UI/fx_Menu_PlaneNoises_2.wav" id="3_0qnhg"]
 [ext_resource type="Texture2D" uid="uid://xhni7ffohhos" path="res://Assets/Art/UI/Logo.png" id="3_xmypg"]
 
 [node name="MainMenu" type="CanvasLayer"]
@@ -40,11 +41,18 @@ offset_right = 806.0
 offset_bottom = 804.0
 text = "EXIT"
 
+[node name="Menu_Background" type="AudioStreamPlayer2D" parent="c"]
+position = Vector2(1099, 307)
+stream = ExtResource("3_0qnhg")
+volume_db = 9.143
+panning_strength = 0.0
+
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(1119, 501)
 scale = Vector2(0.231471, 0.231471)
 texture = ExtResource("3_xmypg")
 
+[connection signal="ready" from="c" to="." method="_on_c_ready"]
 [connection signal="pressed" from="c/Start" to="." method="StartPressed"]
 [connection signal="pressed" from="c/Options" to="." method="OptionsPressed"]
 [connection signal="pressed" from="c/Exit" to="." method="ExitPressed"]
