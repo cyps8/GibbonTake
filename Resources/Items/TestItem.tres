@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://w57am33r17lp"]
+
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="1_ex155"]
+[ext_resource type="Texture2D" uid="uid://cv70ehtvcxuby" path="res://Assets/Art/Other/gaydot.png" id="1_rccdm"]
+
+[resource]
+script = ExtResource("1_ex155")
+name = "Test item"
+icon = ExtResource("1_rccdm")
+description = "This is a very descriptive description."
+color = 1
+shape = 0
+material = 3

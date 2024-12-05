@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca8nbbj5wubxo"]
+
+[ext_resource type="PackedScene" uid="uid://cjypkrbhpkd10" path="res://Blender files/ApeIsland.blend" id="1_y34qn"]
+
+[node name="World" type="Node3D"]
+
+[node name="ApeIsland" parent="." instance=ExtResource("1_y34qn")]
+
+[editable path="ApeIsland"]

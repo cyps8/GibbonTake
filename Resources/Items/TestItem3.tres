@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dkgaoemmq4xdf"]
+
+[ext_resource type="Texture2D" uid="uid://xhni7ffohhos" path="res://Assets/Art/UI/Logo.png" id="1_1frib"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="1_c02w4"]
+
+[resource]
+script = ExtResource("1_c02w4")
+name = "Logo"
+icon = ExtResource("1_1frib")
+description = "Just literally the logo"
+color = 0
+shape = 0
+material = 2
