@@ -51,3 +51,7 @@ func ShowInventory():
 func HideInventory():
 	var tween: Tween = create_tween()
 	tween.tween_property(Inventory.ins, "position", Vector2(0, Inventory.ins.size.y), 0.8).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
+
+
+func _on_clues_ready() -> void:
+	$c/Music_Beach.play()

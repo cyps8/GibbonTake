@@ -24,6 +24,11 @@
 [ext_resource type="Texture2D" uid="uid://1i0wn6okr5xa" path="res://Assets/Art/UI/cross2.png" id="15_ec83r"]
 [ext_resource type="Texture2D" uid="uid://bj2vnx70ffyi" path="res://Assets/Art/UI/monkey opinion sheet paper.png" id="16_c16ci"]
 [ext_resource type="Texture2D" uid="uid://bcmix5v06v2eo" path="res://Assets/Art/UI/cross3.png" id="16_xhd3u"]
+[ext_resource type="Script" path="res://Nodes/Scenes/give_item.gd" id="23_ffgpb"]
+[ext_resource type="Script" path="res://Nodes/Scenes/clues.gd" id="24_hsrqv"]
+[ext_resource type="AudioStream" uid="uid://d3kqgdinorjn5" path="res://Assets/Audio/SFX/UI/fx_Event_Menu_Hover_2.wav" id="25_om8cp"]
+[ext_resource type="AudioStream" uid="uid://bgpmrkttug5d2" path="res://Assets/Audio/SFX/UI/fx_Event_Menu_Select_2.wav" id="26_0dtln"]
+[ext_resource type="AudioStream" uid="uid://bx1ir08acsux0" path="res://Assets/Audio/Music/Music_Beach_1.wav" id="28_unfnm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lr3ix"]
 bg_color = Color(0.875, 0.857197, 0.841919, 1)
@@ -192,6 +197,14 @@ offset_bottom = -131.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_28qkg")
+script = ExtResource("23_ffgpb")
+
+[node name="Confirm_Item" type="AudioStreamPlayer2D" parent="Gameplay/c/Inventory/GiveItem"]
+position = Vector2(-1177, -192)
+stream = ExtResource("26_0dtln")
+volume_db = 12.875
+panning_strength = 0.0
+bus = &"SFX"
 
 [node name="SelectedCircle" type="Panel" parent="Gameplay/c/Inventory"]
 self_modulate = Color(1, 1, 1, 0)
@@ -216,6 +229,7 @@ offset_top = 156.0
 offset_right = 649.0
 offset_bottom = 871.0
 texture_normal = ExtResource("16_c16ci")
+script = ExtResource("24_hsrqv")
 
 [node name="Day1Item" type="TextureRect" parent="Gameplay/c/Inventory/Clues"]
 layout_mode = 0
@@ -313,7 +327,24 @@ offset_right = 538.0
 offset_bottom = 607.0
 expand_mode = 1
 
+[node name="Page_Clicked" type="AudioStreamPlayer2D" parent="Gameplay/c/Inventory/Clues"]
+position = Vector2(370, 358)
+stream = ExtResource("25_om8cp")
+volume_db = 8.135
+panning_strength = 0.0
+bus = &"SFX"
+
+[node name="Music_Beach" type="AudioStreamPlayer2D" parent="Gameplay/c"]
+position = Vector2(34, 46)
+stream = ExtResource("28_unfnm")
+volume_db = 8.914
+panning_strength = 0.0
+bus = &"Music"
+
 [connection signal="pressed" from="Pause/c/Panel/Resume" to="Pause" method="ResumePressed"]
 [connection signal="pressed" from="Pause/c/Panel/Options" to="Pause" method="OptionsPressed"]
 [connection signal="pressed" from="Pause/c/Panel/MainMenu" to="Pause" method="MainMenuPressed"]
+[connection signal="ready" from="Pause/c/Panel/MainMenu" to="Gameplay" method="_on_main_menu_ready"]
 [connection signal="pressed" from="Gameplay/c/Inventory/GiveItem" to="Gameplay/c/Inventory" method="GiveItem"]
+[connection signal="pressed" from="Gameplay/c/Inventory/Clues" to="Gameplay/c/Inventory/Clues" method="_on_pressed"]
+[connection signal="ready" from="Gameplay/c/Inventory/Clues" to="Gameplay" method="_on_clues_ready"]

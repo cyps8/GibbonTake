@@ -60,7 +60,7 @@ func GiveItem():
 		Gameplay.ins.SubmitItem(itemSelected.data)
 	itemSelected.queue_free()
 	itemSelected = null
-
+	$GiveItem/Confirm_Item.play()
 func _process(_dt):
 	if grabbedItem:
 		grabbedItem.MoveTo(get_global_mouse_position() - (grabbedItem.size / 2))
