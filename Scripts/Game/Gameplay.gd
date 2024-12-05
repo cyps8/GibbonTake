@@ -29,7 +29,25 @@ func SpawnItems(amount: int):
 
 func SubmitItem(item: ItemData):
 	submittedItem = item
+	HideInventory()
 	currentDay += 1
 	if currentDay > 3:
 		return
-	Inventory.ins.AddClue(currentDay, item, item.color == wantedItem.color, item.shape == wantedItem.shape, item.material == wantedItem.material)
+	MonkeyScene()
+
+func MonkeyScene():
+	var timeTween: Tween = create_tween()
+	timeTween.tween_interval(1)
+	timeTween.tween_callback(AddClue)
+	timeTween.tween_callback(ShowInventory)
+
+func AddClue():
+	Inventory.ins.AddClue(currentDay, submittedItem, submittedItem.color == wantedItem.color, submittedItem.shape == wantedItem.shape, submittedItem.material == wantedItem.material)
+
+func ShowInventory():
+	var tween: Tween = create_tween()
+	tween.tween_property(Inventory.ins, "position", Vector2(0, 0), 0.8).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+
+func HideInventory():
+	var tween: Tween = create_tween()
+	tween.tween_property(Inventory.ins, "position", Vector2(0, Inventory.ins.size.y), 0.8).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)

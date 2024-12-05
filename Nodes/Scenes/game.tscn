@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b67objofffata"]
+[gd_scene load_steps=32 format=3 uid="uid://b67objofffata"]
 
 [ext_resource type="Script" path="res://Scripts/Game/GameManager.gd" id="1_kg5ow"]
 [ext_resource type="Script" path="res://Scripts/Menus/Pause.gd" id="2_wp568"]
@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://cai8wo1tl3hn1" path="res://Assets/Art/Fonts/Gambado Sans Forte.ttf" id="9_4fqgx"]
 [ext_resource type="Texture2D" uid="uid://bpkfi0peeem7v" path="res://Assets/Art/UI/item selection paper landscape.png" id="9_utulr"]
 [ext_resource type="Resource" uid="uid://dkgaoemmq4xdf" path="res://Resources/Items/TestItem3.tres" id="9_vw6b0"]
+[ext_resource type="PackedScene" uid="uid://ca8nbbj5wubxo" path="res://Nodes/Scenes/world.tscn" id="10_tuhib"]
 [ext_resource type="Texture2D" uid="uid://b7swl1klf0mor" path="res://Assets/Art/UI/item selection circle.png" id="10_v7vgk"]
 [ext_resource type="Texture2D" uid="uid://dv380ytd6gkrw" path="res://Assets/Art/UI/tick1.png" id="11_o03g7"]
 [ext_resource type="Texture2D" uid="uid://c753t08jpylsf" path="res://Assets/Art/UI/item selection tickbox_grey.png" id="11_v2vnh"]
@@ -111,6 +112,11 @@ text = "MAIN MENU
 script = ExtResource("5_fyqy3")
 itemIns = ExtResource("5_2a8bf")
 itemList = Array[ExtResource("7_oayf1")]([ExtResource("8_m7ge7"), ExtResource("8_17ljt"), ExtResource("9_vw6b0")])
+
+[node name="World" parent="Gameplay" instance=ExtResource("10_tuhib")]
+
+[node name="Camera3D" type="Camera3D" parent="Gameplay"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.978, 5.77929, -1.40256)
 
 [node name="c" type="Control" parent="Gameplay"]
 layout_mode = 3
