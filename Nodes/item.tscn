@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2a8ai5ore4hm"]
+[gd_scene load_steps=3 format=3 uid="uid://d1n1vaf2ixggm"]
 
 [ext_resource type="Texture2D" uid="uid://cv70ehtvcxuby" path="res://Assets/Art/Other/gaydot.png" id="1_j27su"]
 [ext_resource type="Script" path="res://Scripts/Game/Item.gd" id="2_81k8c"]
