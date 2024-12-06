@@ -41,8 +41,9 @@ func SubmitItem(item: ItemData):
 	MonkeyScene()
 
 func MonkeyScene():
+	SFXPlayer.ins.PlaySound(2)
 	var timeTween: Tween = create_tween()
-	timeTween.tween_interval(1)
+	timeTween.tween_interval(5.0)
 	timeTween.tween_callback(AddClue)
 	timeTween.tween_callback(ShowInventory)
 

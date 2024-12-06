@@ -13,7 +13,7 @@
 [ext_resource type="Resource" uid="uid://chnsoufscs30n" path="res://Resources/Items/Black Cushion.tres" id="9_egn5g"]
 [ext_resource type="Texture2D" uid="uid://bpkfi0peeem7v" path="res://Assets/Art/UI/item selection paper landscape.png" id="9_utulr"]
 [ext_resource type="Resource" uid="uid://btmy512yppdvs" path="res://Resources/Items/Bottle.tres" id="10_q6a7x"]
-[ext_resource type="PackedScene" uid="uid://ca8nbbj5wubxo" path="res://Nodes/Scenes/world.tscn" id="10_tuhib"]
+[ext_resource type="PackedScene" uid="uid://c8egp2jyspprx" path="res://Nodes/Scenes/world.tscn" id="10_tuhib"]
 [ext_resource type="Texture2D" uid="uid://b7swl1klf0mor" path="res://Assets/Art/UI/item selection circle.png" id="10_v7vgk"]
 [ext_resource type="Resource" uid="uid://2e4h3xj0uvvu" path="res://Resources/Items/Cogs.tres" id="11_lvuo1"]
 [ext_resource type="Texture2D" uid="uid://dv380ytd6gkrw" path="res://Assets/Art/UI/tick1.png" id="11_o03g7"]

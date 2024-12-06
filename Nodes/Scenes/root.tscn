@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctowc83yhrys3"]
+[gd_scene load_steps=15 format=3 uid="uid://ctowc83yhrys3"]
 
 [ext_resource type="Script" path="res://Scripts/root.gd" id="1_v1f3b"]
 [ext_resource type="PackedScene" uid="uid://b67objofffata" path="res://Nodes/Scenes/game.tscn" id="2_1o11g"]
@@ -11,8 +11,9 @@
 [ext_resource type="Script" path="res://Scripts/SFXPlayer.gd" id="7_8th76"]
 [ext_resource type="AudioStream" uid="uid://0rfppcnmo2v5" path="res://Assets/Audio/SFX/UI/fx_MainMenu_Hover_1.wav" id="8_xyjrx"]
 [ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="8_yr7c1"]
-[ext_resource type="AudioStream" uid="uid://bx1ir08acsux0" path="res://Assets/Audio/Music/Music_Beach_1.wav" id="9_cjedo"]
 [ext_resource type="AudioStream" uid="uid://bgpmrkttug5d2" path="res://Assets/Audio/SFX/UI/fx_Event_Menu_Select_2.wav" id="9_vkv3o"]
+[ext_resource type="AudioStream" uid="uid://cbj38b41mb37e" path="res://Assets/Audio/SFX/Council/PreChatter_1.wav" id="12_yrp1g"]
+[ext_resource type="AudioStream" uid="uid://cbiahxusvx6t2" path="res://Assets/Audio/Music/Music_Beach_1.ogg" id="13_tmfjy"]
 
 [node name="Root" type="Node"]
 process_mode = 3
@@ -149,11 +150,11 @@ color = Color(0, 0, 0, 1)
 
 [node name="SFXPlayer" type="Node" parent="."]
 script = ExtResource("7_8th76")
-sounds = Array[AudioStream]([ExtResource("8_xyjrx"), ExtResource("9_vkv3o")])
+sounds = Array[AudioStream]([ExtResource("8_xyjrx"), ExtResource("9_vkv3o"), ExtResource("12_yrp1g")])
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"Music"
 script = ExtResource("8_yr7c1")
-music = Array[AudioStream]([ExtResource("9_cjedo")])
+music = Array[AudioStream]([ExtResource("13_tmfjy")])
 
 [connection signal="pressed" from="OptionsMenu/c/Panel/Back" to="OptionsMenu" method="BackPressed"]
