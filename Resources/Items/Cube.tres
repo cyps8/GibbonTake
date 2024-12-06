@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cub2a75qqndh1"]
+
+[ext_resource type="Texture2D" uid="uid://bdg42d72wpdgu" path="res://Assets/Art/Other/Cibe.png" id="1_bd3rm"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="2_takxp"]
+
+[resource]
+script = ExtResource("2_takxp")
+name = "Cube"
+icon = ExtResource("1_bd3rm")
+description = "Just a simple cube, something some geometry nerd would like"
+color = 2
+shape = 1
+material = 0

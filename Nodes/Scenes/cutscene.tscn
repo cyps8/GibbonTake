@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://br3q2ruxbp7c3"]
+
+[ext_resource type="Texture2D" uid="uid://dwcvjtjwxyihi" path="res://Assets/Art/UI/Plane Cockpit.png" id="1_8ekye"]
+[ext_resource type="Script" path="res://Scripts/Menus/Cutscene.gd" id="1_iabgs"]
+[ext_resource type="AudioStream" uid="uid://big8d5o1t3irm" path="res://Assets/Audio/SFX/UI/fx_Menu_PlaneNoises_2.ogg" id="3_63uhq"]
+
+[sub_resource type="Gradient" id="Gradient_avi1b"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uolsb"]
+gradient = SubResource("Gradient_avi1b")
+width = 192
+height = 108
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Cutscene" type="Node"]
+script = ExtResource("1_iabgs")
+
+[node name="c" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="c"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_8ekye")
+
+[node name="Fade" type="TextureRect" parent="c"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(10, 10)
+texture = SubResource("GradientTexture2D_uolsb")
+
+[node name="PlaneSounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_63uhq")
+bus = &"SFX"

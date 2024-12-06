@@ -1,11 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddcm6wnr6e8xo"]
+[gd_scene load_steps=8 format=3 uid="uid://ddcm6wnr6e8xo"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/MainMenu.gd" id="1_5c6j4"]
+[ext_resource type="Texture2D" uid="uid://dqi7bypkotnvd" path="res://Assets/Art/UI/menu.png" id="2_0kdkw"]
 [ext_resource type="Theme" uid="uid://dits1em4vvtmn" path="res://Resources/Themes/main_theme.tres" id="2_6plgk"]
 [ext_resource type="Texture2D" uid="uid://xhni7ffohhos" path="res://Assets/Art/UI/Logo.png" id="3_xmypg"]
+[ext_resource type="Script" path="res://Scripts/Menus/MenuButton.gd" id="4_ivnwt"]
+
+[sub_resource type="Gradient" id="Gradient_mxntj"]
+offsets = PackedFloat32Array(0.214286, 0.584416)
+colors = PackedColorArray(0.239216, 0.133333, 0, 0.572549, 0.454902, 0.270588, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_142pw"]
+gradient = SubResource("Gradient_mxntj")
+width = 256
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_5c6j4")
+
+[node name="Menu" type="TextureRect" parent="."]
+z_index = -1
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_0kdkw")
 
 [node name="c" type="Control" parent="."]
 layout_mode = 3
@@ -23,28 +42,51 @@ offset_top = 418.0
 offset_right = 502.0
 offset_bottom = 519.0
 text = "START"
+script = ExtResource("4_ivnwt")
+
+[node name="Credits" type="Button" parent="c"]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 540.0
+offset_right = 644.0
+offset_bottom = 641.0
+text = "CREDITS
+"
+script = ExtResource("4_ivnwt")
 
 [node name="Options" type="Button" parent="c"]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 557.0
-offset_right = 655.0
-offset_bottom = 658.0
+offset_left = 493.0
+offset_top = 661.0
+offset_right = 788.0
+offset_bottom = 762.0
 text = "OPTIONS"
+script = ExtResource("4_ivnwt")
 
 [node name="Exit" type="Button" parent="c"]
 layout_mode = 0
-offset_left = 511.0
-offset_top = 703.0
-offset_right = 806.0
-offset_bottom = 804.0
+offset_left = 635.0
+offset_top = 786.0
+offset_right = 930.0
+offset_bottom = 887.0
 text = "EXIT"
+script = ExtResource("4_ivnwt")
+silentButton = true
+disableForWeb = true
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(1119, 501)
-scale = Vector2(0.231471, 0.231471)
+position = Vector2(1462, 323)
+scale = Vector2(0.187286, 0.187286)
 texture = ExtResource("3_xmypg")
 
+[node name="Shadow" type="Sprite2D" parent="Logo"]
+z_index = -1
+position = Vector2(-50.7236, 138.825)
+scale = Vector2(18.7923, 14.016)
+texture = SubResource("GradientTexture2D_142pw")
+
+[connection signal="ready" from="c" to="." method="_on_c_ready"]
 [connection signal="pressed" from="c/Start" to="." method="StartPressed"]
+[connection signal="pressed" from="c/Credits" to="." method="CreditsPressed"]
 [connection signal="pressed" from="c/Options" to="." method="OptionsPressed"]
 [connection signal="pressed" from="c/Exit" to="." method="ExitPressed"]

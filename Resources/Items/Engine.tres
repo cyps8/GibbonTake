@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://3rn4fa7nnr3o"]
+
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="1_8bg7l"]
+[ext_resource type="Texture2D" uid="uid://odjbcmsjbhkj" path="res://Assets/Art/Other/Engine.png" id="1_ffx6t"]
+
+[resource]
+script = ExtResource("1_8bg7l")
+name = "Engine"
+icon = ExtResource("1_ffx6t")
+description = "I'm sure the plane won't need this thing anymore! besides it seems very broken..."
+color = 1
+shape = 1
+material = 3

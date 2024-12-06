@@ -1,6 +1,4 @@
-extends Node
-
-class_name SFXPlayer
+class_name SFXPlayer extends Node
 
 static var ins: SFXPlayer
 

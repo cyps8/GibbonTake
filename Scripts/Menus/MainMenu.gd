@@ -1,7 +1,13 @@
 extends CanvasLayer
 
+func _ready():
+	MusicPlayer.ins.ChangeMusic(0)
+
 func StartPressed():
-	Root.ins.ChangeScene(Root.Scene.GAME)
+	Root.ins.ChangeScene(Root.Scene.CUTSCENE)
+
+func CreditsPressed():
+	pass
 
 func OptionsPressed():
 	Root.ins.OpenOptionsMenu()

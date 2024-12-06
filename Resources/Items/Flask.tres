@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://boiv2r0oppdot"]
+
+[ext_resource type="Texture2D" uid="uid://cdv0qekamaer4" path="res://Assets/Art/Other/Flask.png" id="1_du3vh"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="1_on5su"]
+
+[resource]
+script = ExtResource("1_on5su")
+name = "Flask"
+icon = ExtResource("1_du3vh")
+description = "An empty flask, hopefully whatever it contained wasn't dangerous!"
+color = 1
+shape = 1
+material = 0

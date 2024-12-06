@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c04aqr8uid76m"]
+
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="1_ixbrf"]
+[ext_resource type="Texture2D" uid="uid://bj347mahlewbo" path="res://Assets/Art/Other/Green T-shirt.png" id="1_khbmk"]
+
+[resource]
+script = ExtResource("1_ixbrf")
+name = "Green T-Shirt"
+icon = ExtResource("1_khbmk")
+description = "Just a green t-shirt I found in a suitcase, could've belonged to literally anyone."
+color = 1
+shape = 0
+material = 1

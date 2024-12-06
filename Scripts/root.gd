@@ -7,10 +7,12 @@ static var ins: Root
 
 @export var gameScene: PackedScene
 @export var menuScene: PackedScene
+@export var cutScene: PackedScene
 
 enum Scene{
 	MAINMENU,
-	GAME
+	GAME,
+	CUTSCENE
 }
 
 var optionsRef: Options
@@ -48,6 +50,8 @@ func ChangeScene(newScene: Scene):
 		currentPackedScene = menuScene
 	elif newScene == Scene.GAME:
 		currentPackedScene = gameScene
+	elif newScene == Scene.CUTSCENE:
+		currentPackedScene = cutScene
 
 	add_child(loadingScreenRef)
 

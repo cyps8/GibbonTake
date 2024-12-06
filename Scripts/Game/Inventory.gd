@@ -38,7 +38,8 @@ func _ready():
 
 func ItemGrabbed(item: Node):
 	grabbedItem = item
-	originalPos = item.global_position
+	if bagZone.get_rect().has_point(item.global_position) || selectedCircle.get_rect().has_point(item.global_position):
+		originalPos = item.global_position
 	move_child(grabbedItem, get_child_count() - 1)
 
 func ItemDropped(_item: Node):

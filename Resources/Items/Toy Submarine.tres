@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dmf4ygjdarpx4"]
+
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="1_60nys"]
+[ext_resource type="Texture2D" uid="uid://bisew30f2yv3c" path="res://Assets/Art/Other/Toy submarine.png" id="1_w7koe"]
+
+[resource]
+script = ExtResource("1_60nys")
+name = "Yellow Submarine"
+icon = ExtResource("1_w7koe")
+description = "We all- okay I'll stop"
+color = 0
+shape = 1
+material = 2

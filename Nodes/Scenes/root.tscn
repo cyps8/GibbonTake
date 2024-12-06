@@ -1,18 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctowc83yhrys3"]
+[gd_scene load_steps=15 format=3 uid="uid://ctowc83yhrys3"]
 
 [ext_resource type="Script" path="res://Scripts/root.gd" id="1_v1f3b"]
 [ext_resource type="PackedScene" uid="uid://b67objofffata" path="res://Nodes/Scenes/game.tscn" id="2_1o11g"]
 [ext_resource type="Script" path="res://Scripts/Menus/Options.gd" id="2_gt4ty"]
 [ext_resource type="PackedScene" uid="uid://ddcm6wnr6e8xo" path="res://Nodes/Scenes/main_menu.tscn" id="3_47k4q"]
 [ext_resource type="Theme" uid="uid://dits1em4vvtmn" path="res://Resources/Themes/main_theme.tres" id="3_osjqd"]
+[ext_resource type="PackedScene" uid="uid://br3q2ruxbp7c3" path="res://Nodes/Scenes/cutscene.tscn" id="4_rh4vp"]
+[ext_resource type="Script" path="res://Scripts/Menus/MenuButton.gd" id="6_bcgit"]
 [ext_resource type="Script" path="res://Scripts/Menus/VolumeSlider.gd" id="6_lals1"]
 [ext_resource type="Script" path="res://Scripts/SFXPlayer.gd" id="7_8th76"]
+[ext_resource type="AudioStream" uid="uid://0rfppcnmo2v5" path="res://Assets/Audio/SFX/UI/fx_MainMenu_Hover_1.wav" id="8_xyjrx"]
+[ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="8_yr7c1"]
+[ext_resource type="AudioStream" uid="uid://bgpmrkttug5d2" path="res://Assets/Audio/SFX/UI/fx_Event_Menu_Select_2.wav" id="9_vkv3o"]
+[ext_resource type="AudioStream" uid="uid://cbj38b41mb37e" path="res://Assets/Audio/SFX/Council/PreChatter_1.wav" id="12_yrp1g"]
+[ext_resource type="AudioStream" uid="uid://cbiahxusvx6t2" path="res://Assets/Audio/Music/Music_Beach_1.ogg" id="13_tmfjy"]
 
 [node name="Root" type="Node"]
 process_mode = 3
 script = ExtResource("1_v1f3b")
 gameScene = ExtResource("2_1o11g")
 menuScene = ExtResource("3_47k4q")
+cutScene = ExtResource("4_rh4vp")
 
 [node name="OptionsMenu" type="CanvasLayer" parent="."]
 layer = 50
@@ -48,13 +56,14 @@ offset_top = 342.0
 offset_right = 369.0
 offset_bottom = 416.0
 text = "BACK"
+script = ExtResource("6_bcgit")
 
 [node name="Master" type="HSlider" parent="OptionsMenu/c/Panel"]
 layout_mode = 0
-offset_left = 182.0
-offset_top = 92.0
-offset_right = 466.0
-offset_bottom = 129.0
+offset_left = 175.0
+offset_top = 111.0
+offset_right = 459.0
+offset_bottom = 148.0
 max_value = 1.0
 step = 0.05
 script = ExtResource("6_lals1")
@@ -70,10 +79,10 @@ text = "Master
 
 [node name="Music" type="HSlider" parent="OptionsMenu/c/Panel"]
 layout_mode = 0
-offset_left = 181.0
-offset_top = 163.0
-offset_right = 465.0
-offset_bottom = 200.0
+offset_left = 175.0
+offset_top = 183.0
+offset_right = 459.0
+offset_bottom = 220.0
 max_value = 1.0
 step = 0.05
 script = ExtResource("6_lals1")
@@ -91,10 +100,10 @@ text = "Music
 
 [node name="SFX" type="HSlider" parent="OptionsMenu/c/Panel"]
 layout_mode = 0
-offset_left = 183.0
-offset_top = 240.0
-offset_right = 467.0
-offset_bottom = 277.0
+offset_left = 177.0
+offset_top = 260.0
+offset_right = 461.0
+offset_bottom = 297.0
 max_value = 1.0
 step = 0.05
 script = ExtResource("6_lals1")
@@ -111,10 +120,11 @@ text = "SFX
 
 [node name="Label" type="Label" parent="OptionsMenu/c/Panel"]
 layout_mode = 0
-offset_left = 248.0
-offset_top = 38.0
-offset_right = 319.0
-offset_bottom = 61.0
+offset_left = 159.0
+offset_top = 30.0
+offset_right = 391.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 50
 text = "OPTIONS"
 
 [node name="LoadingScreen" type="CanvasLayer" parent="."]
@@ -140,7 +150,11 @@ color = Color(0, 0, 0, 1)
 
 [node name="SFXPlayer" type="Node" parent="."]
 script = ExtResource("7_8th76")
+sounds = Array[AudioStream]([ExtResource("8_xyjrx"), ExtResource("9_vkv3o"), ExtResource("12_yrp1g")])
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+script = ExtResource("8_yr7c1")
+music = Array[AudioStream]([ExtResource("13_tmfjy")])
 
 [connection signal="pressed" from="OptionsMenu/c/Panel/Back" to="OptionsMenu" method="BackPressed"]

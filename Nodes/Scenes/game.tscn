@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b67objofffata"]
+[gd_scene load_steps=46 format=3 uid="uid://b67objofffata"]
 
 [ext_resource type="Script" path="res://Scripts/Game/GameManager.gd" id="1_kg5ow"]
 [ext_resource type="Script" path="res://Scripts/Menus/Pause.gd" id="2_wp568"]
@@ -6,23 +6,38 @@
 [ext_resource type="PackedScene" uid="uid://b2a8ai5ore4hm" path="res://Nodes/item.tscn" id="5_2a8bf"]
 [ext_resource type="Script" path="res://Scripts/Game/Gameplay.gd" id="5_fyqy3"]
 [ext_resource type="Script" path="res://Scripts/Game/Inventory.gd" id="5_i1b0s"]
+[ext_resource type="Resource" uid="uid://daa1811hrvvim" path="res://Resources/Items/Anvil.tres" id="7_blddn"]
 [ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="7_oayf1"]
-[ext_resource type="Resource" uid="uid://timwwk3xima" path="res://Resources/Items/TestItem2.tres" id="8_17ljt"]
-[ext_resource type="Resource" uid="uid://w57am33r17lp" path="res://Resources/Items/TestItem.tres" id="8_m7ge7"]
+[ext_resource type="Resource" uid="uid://dtjs3rtl5d283" path="res://Resources/Items/Banana.tres" id="8_fqo2m"]
 [ext_resource type="FontFile" uid="uid://cai8wo1tl3hn1" path="res://Assets/Art/Fonts/Gambado Sans Forte.ttf" id="9_4fqgx"]
+[ext_resource type="Resource" uid="uid://chnsoufscs30n" path="res://Resources/Items/Black Cushion.tres" id="9_egn5g"]
 [ext_resource type="Texture2D" uid="uid://bpkfi0peeem7v" path="res://Assets/Art/UI/item selection paper landscape.png" id="9_utulr"]
-[ext_resource type="Resource" uid="uid://dkgaoemmq4xdf" path="res://Resources/Items/TestItem3.tres" id="9_vw6b0"]
+[ext_resource type="Resource" uid="uid://btmy512yppdvs" path="res://Resources/Items/Bottle.tres" id="10_q6a7x"]
+[ext_resource type="PackedScene" uid="uid://c8egp2jyspprx" path="res://Nodes/Scenes/world.tscn" id="10_tuhib"]
 [ext_resource type="Texture2D" uid="uid://b7swl1klf0mor" path="res://Assets/Art/UI/item selection circle.png" id="10_v7vgk"]
+[ext_resource type="Resource" uid="uid://2e4h3xj0uvvu" path="res://Resources/Items/Cogs.tres" id="11_lvuo1"]
 [ext_resource type="Texture2D" uid="uid://dv380ytd6gkrw" path="res://Assets/Art/UI/tick1.png" id="11_o03g7"]
 [ext_resource type="Texture2D" uid="uid://c753t08jpylsf" path="res://Assets/Art/UI/item selection tickbox_grey.png" id="11_v2vnh"]
+[ext_resource type="Resource" uid="uid://cub2a75qqndh1" path="res://Resources/Items/Cube.tres" id="12_gppo1"]
 [ext_resource type="Texture2D" uid="uid://xia0bpupbloe" path="res://Assets/Art/UI/item selection tickbox pressed state.png" id="12_hs4pd"]
 [ext_resource type="Texture2D" uid="uid://dxbdyc2errahv" path="res://Assets/Art/UI/tick2.png" id="12_ot7ao"]
+[ext_resource type="Resource" uid="uid://3rn4fa7nnr3o" path="res://Resources/Items/Engine.tres" id="13_45bh0"]
 [ext_resource type="Texture2D" uid="uid://camxjj63qa07y" path="res://Assets/Art/UI/item selection tickbox.png" id="13_jbgsf"]
 [ext_resource type="Texture2D" uid="uid://ch4t710m6ke7a" path="res://Assets/Art/UI/tick3.png" id="13_x7i0e"]
+[ext_resource type="Resource" uid="uid://dntm2ljcnjxpe" path="res://Resources/Items/Fez.tres" id="14_nui3n"]
 [ext_resource type="Texture2D" uid="uid://cnktg38agki07" path="res://Assets/Art/UI/cross1.png" id="14_qra74"]
+[ext_resource type="Resource" uid="uid://boiv2r0oppdot" path="res://Resources/Items/Flask.tres" id="15_bgmkm"]
 [ext_resource type="Texture2D" uid="uid://1i0wn6okr5xa" path="res://Assets/Art/UI/cross2.png" id="15_ec83r"]
 [ext_resource type="Texture2D" uid="uid://bj2vnx70ffyi" path="res://Assets/Art/UI/monkey opinion sheet paper.png" id="16_c16ci"]
+[ext_resource type="Resource" uid="uid://bcrx62ncffqfu" path="res://Resources/Items/Flower.tres" id="16_cxki4"]
 [ext_resource type="Texture2D" uid="uid://bcmix5v06v2eo" path="res://Assets/Art/UI/cross3.png" id="16_xhd3u"]
+[ext_resource type="Resource" uid="uid://cj650ygyr8d5v" path="res://Resources/Items/Fork.tres" id="17_gfrok"]
+[ext_resource type="Resource" uid="uid://c04aqr8uid76m" path="res://Resources/Items/Green Tshirt.tres" id="18_agd2f"]
+[ext_resource type="Resource" uid="uid://cwpwrovomdvyl" path="res://Resources/Items/Red Car.tres" id="19_ese46"]
+[ext_resource type="Resource" uid="uid://d3yyosxcpacn8" path="res://Resources/Items/Ruby.tres" id="20_i7bng"]
+[ext_resource type="Resource" uid="uid://c047bwhb0kkxe" path="res://Resources/Items/Strawberry.tres" id="21_dgykf"]
+[ext_resource type="Resource" uid="uid://dao2vd2ty1lqb" path="res://Resources/Items/Teddybear.tres" id="22_1odra"]
+[ext_resource type="Resource" uid="uid://dmf4ygjdarpx4" path="res://Resources/Items/Toy Submarine.tres" id="23_hvry8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lr3ix"]
 bg_color = Color(0.875, 0.857197, 0.841919, 1)
@@ -110,7 +125,12 @@ text = "MAIN MENU
 [node name="Gameplay" type="CanvasLayer" parent="."]
 script = ExtResource("5_fyqy3")
 itemIns = ExtResource("5_2a8bf")
-itemList = Array[ExtResource("7_oayf1")]([ExtResource("8_m7ge7"), ExtResource("8_17ljt"), ExtResource("9_vw6b0")])
+itemList = Array[ExtResource("7_oayf1")]([ExtResource("7_blddn"), ExtResource("8_fqo2m"), ExtResource("9_egn5g"), ExtResource("10_q6a7x"), ExtResource("11_lvuo1"), ExtResource("12_gppo1"), ExtResource("13_45bh0"), ExtResource("14_nui3n"), ExtResource("15_bgmkm"), ExtResource("16_cxki4"), ExtResource("17_gfrok"), ExtResource("18_agd2f"), ExtResource("19_ese46"), ExtResource("20_i7bng"), ExtResource("21_dgykf"), ExtResource("22_1odra"), ExtResource("23_hvry8")])
+
+[node name="World" parent="Gameplay" instance=ExtResource("10_tuhib")]
+
+[node name="Camera3D" type="Camera3D" parent="Gameplay"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.978, 5.77929, -1.40256)
 
 [node name="c" type="Control" parent="Gameplay"]
 layout_mode = 3
@@ -171,6 +191,7 @@ offset_bottom = 168.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "NAME"
+autowrap_mode = 2
 
 [node name="GiveItem" type="Button" parent="Gameplay/c/Inventory"]
 layout_mode = 1
