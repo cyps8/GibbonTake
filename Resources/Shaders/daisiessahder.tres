@@ -1,0 +1,35 @@
+[gd_resource type="VisualShader" load_steps=3 format=3 uid="uid://b6o5igheh2oul"]
+
+[ext_resource type="Texture2D" uid="uid://nvugimqq4ccg" path="res://Scripts/Menus/Flowers_A.tga" id="1_la4kj"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_qvaa3"]
+texture = ExtResource("1_la4kj")
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform sampler2D tex_frg_2;
+
+
+
+void fragment() {
+// Texture2D:2
+	vec4 n_out2p0 = texture(tex_frg_2, UV);
+
+
+// Output:0
+	ALBEDO = vec3(n_out2p0.xyz);
+	ALPHA = n_out2p0.x;
+	ALPHA_SCISSOR_THRESHOLD = n_out2p0.x;
+	ALPHA_HASH_SCALE = n_out2p0.x;
+	ALPHA_ANTIALIASING_EDGE = n_out2p0.x;
+	ALPHA_TEXTURE_COORDINATE = vec2(n_out2p0.xy);
+
+
+}
+"
+graph_offset = Vector2(-232.052, 46.4178)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_qvaa3")
+nodes/fragment/2/position = Vector2(-169.65, 492.79)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 1, 2, 0, 0, 19, 2, 0, 0, 20, 2, 0, 0, 21, 2, 0, 0, 22, 2, 0, 0, 0)
