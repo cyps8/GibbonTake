@@ -20,9 +20,14 @@ func _ready():
 	SpawnItems(10)
 
 func SpawnItems(amount: int):
+	var noRepeat: Array[int]
 	for i in amount:
 		var item = itemIns.instantiate() as Item
-		item.SetData(itemList[randi_range(0, itemList.size() - 1)])
+		var rand = randi_range(0, itemList.size() - 1)
+		while noRepeat.has(rand):
+			rand = randi_range(0, itemList.size() - 1)
+		noRepeat.append(rand)
+		item.SetData(itemList[rand])
 		item.global_position = Inventory.ins.GetRandomBagPos() - (item.size / 2)
 		Inventory.ins.add_child(item)
 		wantedItem = item.data

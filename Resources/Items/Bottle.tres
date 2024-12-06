@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://btmy512yppdvs"]
+
+[ext_resource type="Texture2D" uid="uid://cw15qu31q52q3" path="res://Assets/Art/Other/Bottle.png" id="1_ddwj1"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="1_rsv86"]
+
+[resource]
+script = ExtResource("1_rsv86")
+name = "Bottle"
+icon = ExtResource("1_ddwj1")
+description = "A plastic bottle, this had my water in it. Seems like trash to me"
+color = 1
+shape = 1
+material = 2
