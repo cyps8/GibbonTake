@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://br3q2ruxbp7c3"]
+[gd_scene load_steps=14 format=3 uid="uid://br3q2ruxbp7c3"]
 
 [ext_resource type="Texture2D" uid="uid://dwcvjtjwxyihi" path="res://Assets/Art/UI/Plane Cockpit.png" id="1_8ekye"]
 [ext_resource type="Script" path="res://Scripts/Menus/Cutscene.gd" id="1_iabgs"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://hm1nato3sm6v" path="res://Assets/Art/UI/plane.png" id="4_i2rgl"]
 [ext_resource type="Texture2D" uid="uid://dytshtdka5pxi" path="res://Assets/Art/UI/justisland.png" id="4_tlynv"]
 [ext_resource type="AudioStream" uid="uid://vwfvpd38mcrg" path="res://Assets/Audio/SFX/fx_PlaneCrash_1.wav" id="4_yt34t"]
+[ext_resource type="Theme" uid="uid://dits1em4vvtmn" path="res://Resources/Themes/main_theme.tres" id="6_shih7"]
 
 [sub_resource type="Gradient" id="Gradient_avi1b"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -147,9 +148,21 @@ libraries = {
 "": SubResource("AnimationLibrary_owsrw")
 }
 
+[node name="Skip" type="Button" parent="c"]
+z_index = 6
+layout_mode = 0
+offset_left = 1762.0
+offset_top = 12.0
+offset_right = 1909.0
+offset_bottom = 55.0
+theme = ExtResource("6_shih7")
+text = "SKIP"
+
 [node name="PlaneSounds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_63uhq")
 bus = &"SFX"
 
 [node name="PlaneCrash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_yt34t")
+
+[connection signal="pressed" from="c/Skip" to="." method="SkipPressed"]

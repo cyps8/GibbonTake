@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://b67objofffata"]
+[gd_scene load_steps=70 format=3 uid="uid://b67objofffata"]
 
 [ext_resource type="Script" path="res://Scripts/Game/GameManager.gd" id="1_kg5ow"]
 [ext_resource type="Script" path="res://Scripts/Menus/Pause.gd" id="2_wp568"]
@@ -40,9 +40,20 @@
 [ext_resource type="Resource" uid="uid://dmf4ygjdarpx4" path="res://Resources/Items/Toy Submarine.tres" id="23_hvry8"]
 [ext_resource type="Texture2D" uid="uid://bbrcg40nc33g6" path="res://Assets/Art/Apes/orange.png" id="25_lnvx0"]
 [ext_resource type="Texture2D" uid="uid://bctsewbm68p04" path="res://Assets/Art/Apes/pink.png" id="26_5q6ic"]
+[ext_resource type="Texture2D" uid="uid://db2au2t60t67h" path="res://Assets/Art/Apes/orange no.png" id="26_7uoaj"]
 [ext_resource type="Texture2D" uid="uid://bmfal57aby0n8" path="res://Assets/Art/Apes/purple.png" id="27_ufp61"]
+[ext_resource type="Texture2D" uid="uid://du620kc3ib8ft" path="res://Assets/Art/Apes/orange yes.png" id="27_xj84x"]
 [ext_resource type="Texture2D" uid="uid://toy8f5m0w31w" path="res://Assets/Art/Apes/blue.png" id="28_k8sgf"]
 [ext_resource type="Script" path="res://Scripts/Game/Camera.gd" id="29_cgfhv"]
+[ext_resource type="Texture2D" uid="uid://cwru0nxlloudf" path="res://Assets/Art/Apes/pink no.png" id="29_uiamm"]
+[ext_resource type="Texture2D" uid="uid://b3ksmpn0xykht" path="res://Assets/Art/Apes/pink yes.png" id="30_yh86v"]
+[ext_resource type="Texture2D" uid="uid://cx2aeeh11uiv" path="res://Assets/Art/Apes/purple no.png" id="32_dqheh"]
+[ext_resource type="Texture2D" uid="uid://prmuun6ltbve" path="res://Assets/Art/Apes/purple yes.png" id="33_7330e"]
+[ext_resource type="Texture2D" uid="uid://q4lfhlapkns0" path="res://Assets/Art/Apes/blue no.png" id="35_ete01"]
+[ext_resource type="Texture2D" uid="uid://ouucib5udvs3" path="res://Assets/Art/Apes/blue yes.png" id="36_jr2yn"]
+[ext_resource type="Texture2D" uid="uid://cbj4og8cjpexc" path="res://Assets/Art/Apes/purple circle.png" id="52_th4uc"]
+[ext_resource type="Texture2D" uid="uid://fegeffe4qxi6" path="res://Assets/Art/Apes/pink circle.png" id="53_fmsdq"]
+[ext_resource type="Texture2D" uid="uid://50cdukcwixqk" path="res://Assets/Art/Apes/blue circle.png" id="54_1e0li"]
 
 [sub_resource type="Gradient" id="Gradient_mxntj"]
 offsets = PackedFloat32Array(0.214286, 0.792208)
@@ -65,6 +76,114 @@ width = 256
 height = 128
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bnre5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_lnvx0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_7uoaj")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_xj84x")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggna2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_5q6ic")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_uiamm")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_yh86v")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8l2hs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_ufp61")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_dqheh")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_7330e")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k56tq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_k8sgf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_ete01")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_jr2yn")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lr3ix"]
 bg_color = Color(0.875, 0.857197, 0.841919, 1)
@@ -169,21 +288,21 @@ itemList = Array[ExtResource("7_oayf1")]([ExtResource("7_blddn"), ExtResource("8
 
 [node name="Apes" type="Node3D" parent="Gameplay"]
 
-[node name="Orange" type="Sprite3D" parent="Gameplay/Apes"]
-transform = Transform3D(-6.55671e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.55671e-09, -40.7887, 6.32409, -1.94137)
-texture = ExtResource("25_lnvx0")
+[node name="Orange" type="AnimatedSprite3D" parent="Gameplay/Apes"]
+transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, -40.7887, 6.32409, -1.94137)
+sprite_frames = SubResource("SpriteFrames_bnre5")
 
-[node name="Pink" type="Sprite3D" parent="Gameplay/Apes"]
-transform = Transform3D(0.0261581, 0, -0.147702, 0, 0.15, 0, 0.147702, 0, 0.0261581, -41.1579, 5.7642, 1.32954)
-texture = ExtResource("26_5q6ic")
+[node name="Pink" type="AnimatedSprite3D" parent="Gameplay/Apes"]
+transform = Transform3D(-0.0261581, 0, 0.147702, 0, 0.15, 0, -0.147702, 0, -0.0261581, -41.1579, 5.7642, 1.32954)
+sprite_frames = SubResource("SpriteFrames_ggna2")
 
-[node name="Purple" type="Sprite3D" parent="Gameplay/Apes"]
-transform = Transform3D(0.0676246, 0, -0.133891, 0, 0.15, 0, 0.133891, 0, 0.0676246, -40.2759, 5.96637, 4.36872)
-texture = ExtResource("27_ufp61")
+[node name="Purple" type="AnimatedSprite3D" parent="Gameplay/Apes"]
+transform = Transform3D(-0.0676246, 0, 0.133891, 0, 0.15, 0, -0.133891, 0, -0.0676246, -40.2759, 5.86132, 4.36872)
+sprite_frames = SubResource("SpriteFrames_8l2hs")
 
-[node name="Blue" type="Sprite3D" parent="Gameplay/Apes"]
-transform = Transform3D(-0.0538676, 0, -0.139994, 0, 0.15, 0, 0.139994, 0, -0.0538676, -40.8191, 5.87665, -6.57301)
-texture = ExtResource("28_k8sgf")
+[node name="Blue" type="AnimatedSprite3D" parent="Gameplay/Apes"]
+transform = Transform3D(0.0538676, 0, 0.139994, 0, 0.15, 0, -0.139994, 0, 0.0538676, -40.8191, 5.83391, -6.57301)
+sprite_frames = SubResource("SpriteFrames_k56tq")
 
 [node name="Camera" type="Camera3D" parent="Gameplay"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.706, 5.779, -1.403)
@@ -390,6 +509,21 @@ offset_top = 521.0
 offset_right = 538.0
 offset_bottom = 607.0
 expand_mode = 1
+
+[node name="Purple" type="Sprite2D" parent="Gameplay/c/Inventory"]
+position = Vector2(201, 285)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("52_th4uc")
+
+[node name="Pink" type="Sprite2D" parent="Gameplay/c/Inventory"]
+position = Vector2(341, 270)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("53_fmsdq")
+
+[node name="Blue" type="Sprite2D" parent="Gameplay/c/Inventory"]
+position = Vector2(470, 259)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("54_1e0li")
 
 [connection signal="pressed" from="Pause/c/Panel/Resume" to="Pause" method="ResumePressed"]
 [connection signal="pressed" from="Pause/c/Panel/Options" to="Pause" method="OptionsPressed"]

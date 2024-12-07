@@ -21,6 +21,8 @@ var description: Control
 var descriptionName: Label
 var descriptionDesc: Label
 
+var items: Array[TextureButton]
+
 @export var ticks: Array[Texture2D]
 @export var crosses: Array[Texture2D]
 
@@ -35,6 +37,10 @@ func _ready():
 	descriptionDesc = $Description/Desc
 
 	clueStuff = $Clues.get_children()
+
+func AddItem(item: Item):
+	items.append(item)
+	add_child(item)
 
 func ItemGrabbed(item: Node):
 	grabbedItem = item
@@ -60,8 +66,11 @@ func GiveItem():
 	if itemSelected:
 		Gameplay.ins.SubmitItem(itemSelected.data)
 		SFXPlayer.ins.PlaySound(1)
+	Gameplay.ins.itemList.erase(itemSelected.data)
+	items.erase(itemSelected)
 	itemSelected.queue_free()
 	itemSelected = null
+
 func _process(_dt):
 	if grabbedItem:
 		grabbedItem.MoveTo(get_global_mouse_position() - (grabbedItem.size / 2))
@@ -97,5 +106,11 @@ func AddClue(day: int, item: ItemData, color: bool, shape: bool, mat: bool):
 	else:
 		clueStuff[offset + 3].texture = crosses[randi_range(0, crosses.size() - 1)]
 
+func ClearItems():
+	while items.size() > 0:
+		items[0].queue_free()
+		items.remove_at(0)
+
 func ResetClues():
-	pass
+	for clue in clueStuff:
+		clue.texture = null

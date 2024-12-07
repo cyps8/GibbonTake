@@ -16,6 +16,8 @@ var currentRotation: Vector3
 
 var headBob: Tween
 
+var currentZoom: float = 1.0
+
 func _ready():
 	forwardNode = $Forward
 	lookingAt = forwardNode
@@ -30,12 +32,14 @@ func _process(_dt):
 	var mousePos: Vector2 = get_viewport().get_mouse_position()
 	var xoff: float = (mousePos.x - get_viewport().size.x/2)/get_viewport().size.x
 	var yoff: float = (mousePos.y - get_viewport().size.y/2)/get_viewport().size.y
-	rotation_degrees = currentRotation + Vector3(-5 * yoff, -5 * xoff, 0)
+	rotation_degrees = currentRotation + Vector3(-5 * yoff * currentZoom, -5 * xoff * currentZoom, 0)
 
-func ZoomTo(zoomLevel: float):
+func ZoomTo(zoomLevel: float, zoomTime: float):
 	var newFOV: float = zoomLevel * 75.0
 	var tween: Tween = create_tween()
-	tween.tween_property(self, "fov", newFOV, 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self, "fov", newFOV, zoomTime).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.parallel()
+	tween.tween_method(func(val: float): currentZoom = val, currentZoom, zoomLevel, zoomTime).set_trans(Tween.TRANS_LINEAR)
 
 func Approach():
 	var animdDur: float = 1.5
@@ -63,7 +67,7 @@ func LookAt(node: Node3D = null):
 	else:
 		forward = LookTowards(node, 0, true)
 
-func LookTowards(vector, smoothSpeed = 1.0, returnOnly = false):
+func LookTowards(vector, smoothSpeed = 1.5, returnOnly = false):
 	var smooth = smoothSpeed != 0
 	if vector is Object:
 		vector = vector.global_transform.origin

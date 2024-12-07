@@ -73,6 +73,10 @@ func FadeToBlack():
 	fadeTween2.tween_method(ChangeFadeIn, 0.0, 1.0, 2.0).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
 	fadeTween2.tween_callback(EndCutscene)
 
+func SkipPressed():
+	MusicPlayer.ins.MuffleMusic(false)
+	Root.ins.ChangeScene(Root.Scene.GAME)
+
 func EndCutscene():
 	Root.ins.ChangeScene(Root.Scene.GAME)
 

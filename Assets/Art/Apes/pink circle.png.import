@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwru0nxlloudf"
-path.s3tc="res://.godot/imported/pink no.png-9de3b35bb756d10fe41396cdce87ee96.s3tc.ctex"
+uid="uid://fegeffe4qxi6"
+path="res://.godot/imported/pink circle.png-fd5c1cbc1695c82e064fdfe06f111905.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Apes/pink no.png"
-dest_files=["res://.godot/imported/pink no.png-9de3b35bb756d10fe41396cdce87ee96.s3tc.ctex"]
+source_file="res://Assets/Art/Apes/pink circle.png"
+dest_files=["res://.godot/imported/pink circle.png-fd5c1cbc1695c82e064fdfe06f111905.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
