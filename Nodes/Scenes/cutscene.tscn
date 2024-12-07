@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://br3q2ruxbp7c3"]
+[gd_scene load_steps=7 format=3 uid="uid://br3q2ruxbp7c3"]
 
 [ext_resource type="Texture2D" uid="uid://dwcvjtjwxyihi" path="res://Assets/Art/UI/Plane Cockpit.png" id="1_8ekye"]
 [ext_resource type="Script" path="res://Scripts/Menus/Cutscene.gd" id="1_iabgs"]
 [ext_resource type="AudioStream" uid="uid://big8d5o1t3irm" path="res://Assets/Audio/SFX/UI/fx_Menu_PlaneNoises_2.ogg" id="3_63uhq"]
+[ext_resource type="AudioStream" uid="uid://vwfvpd38mcrg" path="res://Assets/Audio/SFX/fx_PlaneCrash_1.wav" id="4_yt34t"]
 
 [sub_resource type="Gradient" id="Gradient_avi1b"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -41,3 +42,6 @@ texture = SubResource("GradientTexture2D_uolsb")
 [node name="PlaneSounds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_63uhq")
 bus = &"SFX"
+
+[node name="PlaneCrash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yt34t")
