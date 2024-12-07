@@ -169,19 +169,19 @@ itemList = Array[ExtResource("7_oayf1")]([ExtResource("7_blddn"), ExtResource("8
 
 [node name="Apes" type="Node3D" parent="Gameplay"]
 
-[node name="Main" type="Sprite3D" parent="Gameplay/Apes"]
+[node name="Orange" type="Sprite3D" parent="Gameplay/Apes"]
 transform = Transform3D(-6.55671e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.55671e-09, -40.7887, 6.32409, -1.94137)
 texture = ExtResource("25_lnvx0")
 
-[node name="Shape" type="Sprite3D" parent="Gameplay/Apes"]
+[node name="Pink" type="Sprite3D" parent="Gameplay/Apes"]
 transform = Transform3D(0.0261581, 0, -0.147702, 0, 0.15, 0, 0.147702, 0, 0.0261581, -41.1579, 5.7642, 1.32954)
 texture = ExtResource("26_5q6ic")
 
-[node name="Colour" type="Sprite3D" parent="Gameplay/Apes"]
+[node name="Purple" type="Sprite3D" parent="Gameplay/Apes"]
 transform = Transform3D(0.0676246, 0, -0.133891, 0, 0.15, 0, 0.133891, 0, 0.0676246, -40.2759, 5.96637, 4.36872)
 texture = ExtResource("27_ufp61")
 
-[node name="Colour2" type="Sprite3D" parent="Gameplay/Apes"]
+[node name="Blue" type="Sprite3D" parent="Gameplay/Apes"]
 transform = Transform3D(-0.0538676, 0, -0.139994, 0, 0.15, 0, 0.139994, 0, -0.0538676, -40.8191, 5.87665, -6.57301)
 texture = ExtResource("28_k8sgf")
 
@@ -189,7 +189,11 @@ texture = ExtResource("28_k8sgf")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.706, 5.779, -1.403)
 script = ExtResource("29_cgfhv")
 spawnPos = Vector3(-24.54, 5.779, -1.403)
-standPos = Vector3(-29.546, 5.779, -1.403)
+standPos = Vector3(-33, 5.779, -1.403)
+
+[node name="Forward" type="Node3D" parent="Gameplay/Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8489, 5.779, -1.403)
+top_level = true
 
 [node name="c" type="Control" parent="Gameplay"]
 layout_mode = 3

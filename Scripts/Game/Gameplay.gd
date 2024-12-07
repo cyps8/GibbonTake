@@ -15,9 +15,38 @@ var submittedItem: ItemData
 
 var currentDay: int
 
+var camRef: Camera3D
+
+var apeOrange: Sprite3D
+
+var apeBlue: Sprite3D
+
+var apePurple: Sprite3D
+
+var apePink: Sprite3D
+
 func _ready():
+	camRef = $Camera
+
+	apeOrange = $Apes/Orange
+	apeBlue = $Apes/Blue
+	apePurple = $Apes/Purple
+	apePink = $Apes/Pink
+
+	Inventory.ins.visible = false
 	currentDay = 0
-	SpawnItems(10)
+	camRef.Approach()
+	var delayTween: Tween = create_tween().set_loops()
+	delayTween.tween_interval(2.0)
+	delayTween.tween_callback(camRef.ZoomTo.bind(0.6))
+	delayTween.tween_callback(camRef.LookAt.bind(apeOrange))
+	delayTween.tween_interval(2.0)
+	delayTween.tween_callback(camRef.LookAt.bind(apeBlue))
+	delayTween.tween_interval(2.0)
+	delayTween.tween_callback(camRef.LookAt.bind(apePurple))
+	delayTween.tween_interval(2.0)
+	delayTween.tween_callback(camRef.LookAt.bind(apePink))
+	#SpawnItems(10)
 
 func SpawnItems(amount: int):
 	var noRepeat: Array[int]
@@ -51,13 +80,11 @@ func AddClue():
 	Inventory.ins.AddClue(currentDay, submittedItem, submittedItem.color == wantedItem.color, submittedItem.shape == wantedItem.shape, submittedItem.material == wantedItem.material)
 
 func ShowInventory():
+	Inventory.ins.position = Vector2(0, Inventory.ins.size.y)
 	var tween: Tween = create_tween()
 	tween.tween_property(Inventory.ins, "position", Vector2(0, 0), 0.8).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 
 func HideInventory():
+	Inventory.ins.position = Vector2.ZERO
 	var tween: Tween = create_tween()
 	tween.tween_property(Inventory.ins, "position", Vector2(0, Inventory.ins.size.y), 0.8).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
-
-
-func _on_clues_ready() -> void:
-	$c/Music_Beach.play()
