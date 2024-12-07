@@ -6,9 +6,10 @@ enum SoundType { MASTER = 0, MUSIC = 1, SFX = 2}
 
 @export var sounds: Array[AudioStream]
 
-func _ready():
+func _init():
 	ins = self
 
+func _ready():
 	for sound in sounds:
 		load(sound.get_path())
 

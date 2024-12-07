@@ -1,7 +1,14 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dits1em4vvtmn"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://dits1em4vvtmn"]
 
 [ext_resource type="FontFile" uid="uid://cai8wo1tl3hn1" path="res://Assets/Art/Fonts/Gambado Sans Forte.ttf" id="1_8pb5x"]
 [ext_resource type="Texture2D" uid="uid://dj8ti1sbn6ryv" path="res://Assets/Art/UI/Button.png" id="1_bltnk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3jx71"]
+load_path = "res://.godot/imported/Button.png-f3942555141d616544ef82cee9e9571b.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_texl0"]
+texture = SubResource("CompressedTexture2D_3jx71")
+modulate_color = Color(0.212305, 0.212305, 0.212305, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_enh6m"]
 
@@ -38,6 +45,7 @@ corner_radius_bottom_left = 50
 default_font = ExtResource("1_8pb5x")
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/font_sizes/font_size = 24
+Button/styles/disabled = SubResource("StyleBoxTexture_texl0")
 Button/styles/focus = SubResource("StyleBoxEmpty_enh6m")
 Button/styles/hover = SubResource("StyleBoxTexture_n1tno")
 Button/styles/normal = SubResource("StyleBoxTexture_3ob3s")

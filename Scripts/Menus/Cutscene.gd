@@ -11,7 +11,7 @@ func _ready():
 	planeSoundsFade.tween_method(PlaneSoundsFade, 0.0, 2.0, 4.0).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
 	MusicPlayer.ins.MuffleMusic(true)
 	var durationTween: Tween = create_tween()
-	durationTween.tween_interval(8.0)
+	durationTween.tween_interval(7.0)
 	durationTween.tween_callback(MusicPlayer.ins.MuffleMusic.bind(false))
 	durationTween.tween_callback(Root.ins.ChangeScene.bind(Root.Scene.GAME))
 
