@@ -1,0 +1,101 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl7uy2kkfvdw1"]
+
+[ext_resource type="Script" path="res://Scripts/Game/DialogueBox.gd" id="1_0ggij"]
+[ext_resource type="FontFile" uid="uid://cai8wo1tl3hn1" path="res://Assets/Art/Fonts/Gambado Sans Forte.ttf" id="1_8y0ub"]
+
+[node name="DialogueBox" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("1_0ggij")
+
+[node name="Text1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 58.0
+offset_right = 610.0
+offset_bottom = 308.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8y0ub")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Text2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 404.0
+offset_right = 610.0
+offset_bottom = 654.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8y0ub")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Text3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 787.0
+offset_right = 606.0
+offset_bottom = 1037.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8y0ub")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Text4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 66.0
+offset_right = 1255.0
+offset_bottom = 408.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8y0ub")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Text5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 598.0
+offset_right = 1066.0
+offset_bottom = 1016.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8y0ub")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Text6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1279.0
+offset_top = 775.0
+offset_right = 1738.0
+offset_bottom = 946.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8y0ub")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Text7" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1434.0
+offset_top = 329.0
+offset_right = 1840.0
+offset_bottom = 636.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8y0ub")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

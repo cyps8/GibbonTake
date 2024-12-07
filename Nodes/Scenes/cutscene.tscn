@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://br3q2ruxbp7c3"]
+[gd_scene load_steps=13 format=3 uid="uid://br3q2ruxbp7c3"]
 
 [ext_resource type="Texture2D" uid="uid://dwcvjtjwxyihi" path="res://Assets/Art/UI/Plane Cockpit.png" id="1_8ekye"]
 [ext_resource type="Script" path="res://Scripts/Menus/Cutscene.gd" id="1_iabgs"]
+[ext_resource type="Texture2D" uid="uid://dqi7bypkotnvd" path="res://Assets/Art/UI/menu.png" id="3_4jjao"]
 [ext_resource type="AudioStream" uid="uid://big8d5o1t3irm" path="res://Assets/Audio/SFX/UI/fx_Menu_PlaneNoises_2.ogg" id="3_63uhq"]
+[ext_resource type="Texture2D" uid="uid://hm1nato3sm6v" path="res://Assets/Art/UI/plane.png" id="4_i2rgl"]
+[ext_resource type="Texture2D" uid="uid://dytshtdka5pxi" path="res://Assets/Art/UI/justisland.png" id="4_tlynv"]
 [ext_resource type="AudioStream" uid="uid://vwfvpd38mcrg" path="res://Assets/Audio/SFX/fx_PlaneCrash_1.wav" id="4_yt34t"]
 
 [sub_resource type="Gradient" id="Gradient_avi1b"]
@@ -14,6 +17,91 @@ width = 192
 height = 108
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_p8qkb"]
+resource_name = "PlaneCrash"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Plane:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.766667, 0.866667, 0.933333, 1.06667, 1.16667, 1.36667, 1.5, 1.66667, 1.86667, 2.03333, 2.2, 2.36667, 2.53333, 2.66667, 2.8, 2.96667, 3.1, 3.26667, 3.43333, 3.6, 3.76667, 3.93333, 4.06667, 4.2, 4.33333, 4.46667, 4.56667, 4.7, 4.83333, 4.96667, 5.13333, 5.26667, 5.36667, 5.46667, 5.6, 5.73333, 5.86667, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(200, 126), Vector2(192, 177), Vector2(203, 162), Vector2(203, 190), Vector2(214, 182), Vector2(229, 197), Vector2(227, 218), Vector2(246, 243), Vector2(274, 254), Vector2(270, 233), Vector2(295, 286), Vector2(312, 275), Vector2(325, 315), Vector2(361, 307), Vector2(372, 341), Vector2(397, 354), Vector2(490, 354), Vector2(558, 329), Vector2(602, 287), Vector2(615, 253), Vector2(587, 196), Vector2(543, 166), Vector2(505, 145), Vector2(450, 147), Vector2(399, 183), Vector2(382, 238), Vector2(384, 266), Vector2(399, 296), Vector2(446, 347), Vector2(497, 391), Vector2(563, 421), Vector2(593, 391), Vector2(595, 429), Vector2(614, 410), Vector2(618, 444), Vector2(660, 427), Vector2(690, 488), Vector2(781, 465), Vector2(800, 522), Vector2(853, 503), Vector2(859, 556), Vector2(914, 528), Vector2(937, 594), Vector2(998, 590), Vector2(1019, 651), Vector2(1089, 634), Vector2(1114, 719), Vector2(1256, 785)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Plane:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.182407, 0.182407), Vector2(0.274537, 0.274537)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Plane:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.16667, 1.36667, 1.5, 1.66667, 1.86667, 2.03333, 2.2, 2.36667, 2.53333, 2.66667, 2.8, 2.96667, 3.1, 3.26667, 3.43333, 3.6, 3.76667, 3.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, -0.176278, -0.53058, -0.884882, -1.23918, -1.76976, -2.12407, -2.65465, -3.18523, -3.71581, -4.07011, -4.42441, -4.95499, -5.30929, -5.66359, -6.0179, -6.19417, -6.19417]
+}
+
+[sub_resource type="Animation" id="Animation_74jjv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Plane:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200, 126)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Plane:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Plane:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.182407, 0.182407)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_owsrw"]
+_data = {
+"PlaneCrash": SubResource("Animation_p8qkb"),
+"RESET": SubResource("Animation_74jjv")
+}
 
 [node name="Cutscene" type="Node"]
 script = ExtResource("1_iabgs")
@@ -33,11 +121,31 @@ offset_bottom = 40.0
 texture = ExtResource("1_8ekye")
 
 [node name="Fade" type="TextureRect" parent="c"]
+z_index = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(10, 10)
 texture = SubResource("GradientTexture2D_uolsb")
+
+[node name="Island" type="Sprite2D" parent="c"]
+position = Vector2(960, 540)
+texture = ExtResource("3_4jjao")
+
+[node name="JustIsland" type="Sprite2D" parent="c"]
+z_index = 1
+position = Vector2(960, 540)
+texture = ExtResource("4_tlynv")
+
+[node name="Plane" type="Sprite2D" parent="c"]
+position = Vector2(200, 126)
+scale = Vector2(0.182407, 0.182407)
+texture = ExtResource("4_i2rgl")
+
+[node name="PlaneAnimation" type="AnimationPlayer" parent="c"]
+libraries = {
+"": SubResource("AnimationLibrary_owsrw")
+}
 
 [node name="PlaneSounds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_63uhq")

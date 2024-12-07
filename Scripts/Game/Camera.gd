@@ -14,6 +14,8 @@ var dt: float
 
 var currentRotation: Vector3
 
+var headBob: Tween
+
 func _ready():
 	forwardNode = $Forward
 	lookingAt = forwardNode
@@ -39,11 +41,19 @@ func Approach():
 	var animdDur: float = 1.5
 	var tween: Tween = create_tween()
 	tween.tween_property(self, "position:x", standPos.x, animdDur).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+	if headBob != null:
+		headBob.kill()
 	var bounce: Tween = create_tween()
 	bounce.tween_property(self, "position:y", position.y + 0.2, animdDur/4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	bounce.tween_property(self, "position:y", standPos.y, animdDur/4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	bounce.tween_property(self, "position:y", position.y + 0.2, animdDur/4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	bounce.tween_property(self, "position:y", standPos.y, animdDur/4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	bounce.tween_callback(HeadBob)
+
+func HeadBob():
+	headBob = create_tween().set_loops()
+	headBob.tween_property(self, "position:y", position.y + 0.1, 1.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	headBob.tween_property(self, "position:y", standPos.y, 1.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 
 func LookAt(node: Node3D = null):
 	lookingAt = node

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ctowc83yhrys3"]
+[gd_scene load_steps=19 format=3 uid="uid://ctowc83yhrys3"]
 
 [ext_resource type="Script" path="res://Scripts/root.gd" id="1_v1f3b"]
 [ext_resource type="PackedScene" uid="uid://b67objofffata" path="res://Nodes/Scenes/game.tscn" id="2_1o11g"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://cbiahxusvx6t2" path="res://Assets/Audio/Music/Music_Beach_1.ogg" id="13_tmfjy"]
 [ext_resource type="AudioStream" uid="uid://vwfvpd38mcrg" path="res://Assets/Audio/SFX/fx_PlaneCrash_1.wav" id="14_8638f"]
 [ext_resource type="AudioStream" uid="uid://bfhdetfasb2ij" path="res://Assets/Audio/Music/Main menu.wav" id="17_r8vmj"]
+[ext_resource type="PackedScene" uid="uid://dcjhi4s8xlbf6" path="res://Nodes/dialogue_manager.tscn" id="18_vuj6p"]
 
 [node name="Root" type="Node"]
 process_mode = 3
@@ -170,5 +171,8 @@ sounds = Array[AudioStream]([ExtResource("11_oyaw3"), ExtResource("9_vkv3o"), Ex
 bus = &"Music"
 script = ExtResource("8_yr7c1")
 music = Array[AudioStream]([ExtResource("13_tmfjy"), ExtResource("17_r8vmj")])
+
+[node name="DialogueManager" parent="." instance=ExtResource("18_vuj6p")]
+layer = 25
 
 [connection signal="pressed" from="OptionsMenu/c/Panel/Back" to="OptionsMenu" method="BackPressed"]

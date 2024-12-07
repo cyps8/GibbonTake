@@ -1,0 +1,26 @@
+[gd_scene load_steps=10 format=3 uid="uid://dcjhi4s8xlbf6"]
+
+[ext_resource type="Script" path="res://Scripts/Game/DialogueManager.gd" id="1_djygo"]
+[ext_resource type="Texture2D" uid="uid://c07ax6cgvm727" path="res://Assets/Art/Dialogue/dialogue1.png" id="2_d0gib"]
+[ext_resource type="Texture2D" uid="uid://bfjbxe6ua4coa" path="res://Assets/Art/Dialogue/dialogue7.png" id="2_voa00"]
+[ext_resource type="Texture2D" uid="uid://cayyauu51rd7" path="res://Assets/Art/Dialogue/dialogue2.png" id="3_vvttv"]
+[ext_resource type="Texture2D" uid="uid://gabnaxmvtevj" path="res://Assets/Art/Dialogue/dialogue3.png" id="4_kxqvm"]
+[ext_resource type="Texture2D" uid="uid://cki5kihlyuayc" path="res://Assets/Art/Dialogue/dialogue4.png" id="5_2dhit"]
+[ext_resource type="Texture2D" uid="uid://csaa7al4xst3a" path="res://Assets/Art/Dialogue/dialogue5.png" id="6_v2s0u"]
+[ext_resource type="Texture2D" uid="uid://g4fa7y4j617t" path="res://Assets/Art/Dialogue/dialogue6.png" id="7_6d86k"]
+[ext_resource type="PackedScene" uid="uid://cl7uy2kkfvdw1" path="res://Nodes/Scenes/dialogue_box.tscn" id="9_smm5o"]
+
+[node name="DialogueManager" type="CanvasLayer"]
+script = ExtResource("1_djygo")
+dialogueTextures = Array[Texture2D]([ExtResource("2_d0gib"), ExtResource("3_vvttv"), ExtResource("4_kxqvm"), ExtResource("5_2dhit"), ExtResource("6_v2s0u"), ExtResource("7_6d86k"), ExtResource("2_voa00")])
+dialogueOffScreen = Array[Vector2]([Vector2(-700, 0), Vector2(-700, 0), Vector2(-700, 0), Vector2(0, -500), Vector2(0, 600), Vector2(600, 400), Vector2(550, 0)])
+diaBoxIns = ExtResource("9_smm5o")
+
+[node name="c" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
