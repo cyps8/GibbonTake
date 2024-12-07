@@ -59,9 +59,9 @@ func ItemDropped(_item: Node):
 func GiveItem():
 	if itemSelected:
 		Gameplay.ins.SubmitItem(itemSelected.data)
+		SFXPlayer.ins.PlaySound(1)
 	itemSelected.queue_free()
 	itemSelected = null
-
 func _process(_dt):
 	if grabbedItem:
 		grabbedItem.MoveTo(get_global_mouse_position() - (grabbedItem.size / 2))

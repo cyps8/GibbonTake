@@ -16,7 +16,7 @@ func _ready():
 	remove_child(pauseMenuRef)
 	var delayTween: Tween = create_tween()
 	delayTween.tween_callback(Root.ins.HideLoadingScreen).set_delay(0.05)
-
+	MusicPlayer.ins.ChangeMusic(0)
 func _process(_dt):
 	if Input.is_action_just_pressed("Pause") && !Root.ins.optionsOpen:
 		TogglePause()

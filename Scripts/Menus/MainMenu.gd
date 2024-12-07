@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 func _ready():
-	MusicPlayer.ins.ChangeMusic(0)
+	MusicPlayer.ins.ChangeMusic(1)
 
 func StartPressed():
 	Root.ins.ChangeScene(Root.Scene.CUTSCENE)
