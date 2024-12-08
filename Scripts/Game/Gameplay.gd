@@ -35,6 +35,10 @@ var actualDay: int = 0
 
 var gameOver: bool = false
 
+var showItem: Sprite3D
+
+@export var thoughts: Array[String]
+
 func _ready():
 	DialogueMan.ins.HideAllDialogue()
 
@@ -42,6 +46,9 @@ func _ready():
 	$GameOver.visible = false
 
 	camRef = $Camera
+	showItem = $Camera/ShowItem
+	showItem.visible = false
+	showItem.position.y = -2
 
 	apeOrange = $Apes/Orange
 	apeBlue = $Apes/Blue
@@ -159,6 +166,7 @@ func ProgressIntro():
 		delayTween.tween_callback(NewDay)
 
 func NewDay():
+	DialogueMan.ins.HideAllDialogue()
 	ResetInventory()
 	actualDay += 1
 	DisplayDay()
@@ -173,7 +181,20 @@ func NewDay():
 	delayTween.tween_callback(StartGame)
 
 func StartGame():
-	SpawnItems(5)
+	var itemAmount: int = 5
+	if actualDay == 1:
+		itemAmount = 5
+	if actualDay == 2:
+		itemAmount = 7
+	if actualDay == 3 || actualDay == 4:
+		itemAmount = 10
+	if actualDay == 5 || actualDay == 6:
+		itemAmount = 12
+	if actualDay == 7 || actualDay == 8:
+		itemAmount = 14
+	if actualDay > 8:
+		itemAmount = 16
+	SpawnItems(itemAmount)
 	ShowInventory()
 
 func SpawnHat():
@@ -216,9 +237,23 @@ func SubmitItem(item: ItemData):
 
 var apeTween: Tween
 
+func ShowItem():
+	showItem.texture = submittedItem.icon
+	showItem.visible = true
+	showItem.position.y = -2
+	var tween: Tween = create_tween()
+	tween.tween_property(showItem, "position:y", -0.75, 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.tween_interval(3.0)
+	tween.tween_property(showItem, "position:y", -2, 0.5).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
+	tween.tween_callback(func(): showItem.visible = false)
+
 func MonkeyScene():
-	SFXPlayer.ins.PlaySound(2)
+	
 	apeTween = create_tween()
+	apeTween.tween_interval(1.5)
+	apeTween.tween_callback(ShowItem)
+	apeTween.tween_callback(SFXPlayer.ins.PlaySound.bind(2))
+	apeTween.tween_callback(DialogueMan.ins.NewDialogue.bind(5, thoughts[randi_range(0, thoughts.size() - 1)], 3.5))
 	apeTween.tween_interval(4.0)
 	apeTween.tween_callback(camRef.ZoomTo.bind(0.4, 2.0))
 	apeTween.tween_callback(camRef.LookAt.bind(apePurple))
@@ -345,6 +380,7 @@ func PlayAgainPressed():
 func MainMenuPressed():
 	if !gameOver:
 		return
+	DialogueMan.ins.HideAllDialogue()
 	Root.ins.ChangeScene(Root.Scene.MAINMENU)
 
 func SkipTutorial():
@@ -357,7 +393,7 @@ func SkipTutorial():
 	HideInventory()
 	if apeTween != null:
 		apeTween.kill()
-	camRef.ZoomTo(1.0)
+	camRef.ZoomTo(1.0, 0.01)
 	camRef.LookAt()
 	FadeBlack(1.0, 2.0)
 	var delayTween: Tween = create_tween()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://b67objofffata"]
+[gd_scene load_steps=78 format=3 uid="uid://b67objofffata"]
 
 [ext_resource type="Script" path="res://Scripts/Game/GameManager.gd" id="1_kg5ow"]
 [ext_resource type="Script" path="res://Scripts/Menus/Pause.gd" id="2_wp568"]
@@ -55,6 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://ouucib5udvs3" path="res://Assets/Art/Apes/blue yes.png" id="36_jr2yn"]
 [ext_resource type="Script" path="res://Nodes/Scenes/purple.gd" id="36_s7qlr"]
 [ext_resource type="Script" path="res://Nodes/Scenes/blue.gd" id="40_jm1v4"]
+[ext_resource type="Texture2D" uid="uid://c6s0hs2y06caf" path="res://Assets/Art/Other/Starwberry.png" id="42_17o3h"]
 [ext_resource type="Texture2D" uid="uid://cbj4og8cjpexc" path="res://Assets/Art/Apes/purple circle.png" id="52_th4uc"]
 [ext_resource type="Texture2D" uid="uid://fegeffe4qxi6" path="res://Assets/Art/Apes/pink circle.png" id="53_fmsdq"]
 [ext_resource type="Texture2D" uid="uid://50cdukcwixqk" path="res://Assets/Art/Apes/blue circle.png" id="54_1e0li"]
@@ -306,6 +307,7 @@ process_mode = 1
 script = ExtResource("5_fyqy3")
 itemIns = ExtResource("5_2a8bf")
 itemList = Array[ExtResource("7_oayf1")]([ExtResource("7_blddn"), ExtResource("8_fqo2m"), ExtResource("9_egn5g"), ExtResource("10_q6a7x"), ExtResource("11_lvuo1"), ExtResource("12_gppo1"), ExtResource("13_45bh0"), ExtResource("14_nui3n"), ExtResource("15_bgmkm"), ExtResource("16_cxki4"), ExtResource("17_gfrok"), ExtResource("18_agd2f"), ExtResource("19_ese46"), ExtResource("20_i7bng"), ExtResource("21_dgykf"), ExtResource("22_1odra"), ExtResource("23_hvry8")])
+thoughts = Array[String](["man.. I really don’t want to give this away..", "this has been in my family for generations…", "is this really what it takes for me to stay safe?", "this is all meaningless to them… I don’t understand how this is valuable….", "I hope they take good care of this...", "I never thought I'd be losing this..."])
 
 [node name="World" parent="Gameplay" instance=ExtResource("10_tuhib")]
 
@@ -340,6 +342,10 @@ standPos = Vector3(-33, 5.779, -1.403)
 [node name="Forward" type="Node3D" parent="Gameplay/Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8489, 5.779, -1.403)
 top_level = true
+
+[node name="ShowItem" type="Sprite3D" parent="Gameplay/Camera"]
+transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, 0, -2, -2.259)
+texture = ExtResource("42_17o3h")
 
 [node name="c" type="Control" parent="Gameplay"]
 layout_mode = 3
