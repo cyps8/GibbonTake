@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddcm6wnr6e8xo"]
+[gd_scene load_steps=14 format=3 uid="uid://ddcm6wnr6e8xo"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/MainMenu.gd" id="1_5c6j4"]
 [ext_resource type="Texture2D" uid="uid://dqi7bypkotnvd" path="res://Assets/Art/UI/menu.png" id="2_0kdkw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://hm1nato3sm6v" path="res://Assets/Art/UI/plane.png" id="6_btldg"]
 [ext_resource type="Script" path="res://Scripts/Menus/plane.gd" id="7_u14ja"]
 [ext_resource type="Script" path="res://Scripts/Menus/Credits.gd" id="8_7bipc"]
+[ext_resource type="Texture2D" uid="uid://dy5858jaim4ku" path="res://Assets/Art/Other/file.png" id="9_kl3ux"]
 
 [sub_resource type="Gradient" id="Gradient_jakxw"]
 offsets = PackedFloat32Array(0.214286, 0.584416)
@@ -140,10 +141,96 @@ text = "BACK"
 layout_mode = 0
 offset_left = 683.0
 offset_top = 59.0
-offset_right = 1027.0
+offset_right = 977.0
 offset_bottom = 140.0
 theme_override_font_sizes/font_size = 80
-text = "CREDITS"
+text = "CrEdiTs"
+
+[node name="Label3" type="Label" parent="Credits/Panel"]
+offset_left = 90.0
+offset_top = 350.0
+offset_right = 275.0
+offset_bottom = 431.0
+theme_override_font_sizes/font_size = 50
+text = "ArTiStS"
+
+[node name="Label2" type="Label" parent="Credits/Panel"]
+layout_mode = 1
+offset_left = 90.0
+offset_top = 200.0
+offset_right = 432.0
+offset_bottom = 281.0
+theme_override_font_sizes/font_size = 50
+text = "PrOgRaMmEr "
+
+[node name="Label4" type="Label" parent="Credits/Panel"]
+offset_left = 90.0
+offset_top = 700.0
+offset_right = 347.0
+offset_bottom = 781.0
+theme_override_font_sizes/font_size = 50
+text = "AuDiO SfX"
+
+[node name="Label5" type="Label" parent="Credits/Panel"]
+offset_left = 90.0
+offset_top = 850.0
+offset_right = 281.0
+offset_bottom = 931.0
+theme_override_font_sizes/font_size = 50
+text = "MuSiC"
+
+[node name="Label6" type="Label" parent="Credits/Panel"]
+offset_left = 1000.0
+offset_top = 200.0
+offset_right = 1595.0
+offset_bottom = 281.0
+theme_override_font_sizes/font_size = 50
+text = "Lead Programmer - Cypri"
+
+[node name="Label7" type="Label" parent="Credits/Panel"]
+offset_left = 1000.0
+offset_top = 350.0
+offset_right = 1874.0
+offset_bottom = 431.0
+theme_override_font_sizes/font_size = 50
+text = "3D Artist - Jack Teviotdale"
+
+[node name="Label8" type="Label" parent="Credits/Panel"]
+offset_left = 1000.0
+offset_top = 450.0
+offset_right = 1892.0
+offset_bottom = 531.0
+theme_override_font_sizes/font_size = 50
+text = "2D Artist - Chloe Gardiner"
+
+[node name="Label9" type="Label" parent="Credits/Panel"]
+offset_left = 1000.0
+offset_top = 550.0
+offset_right = 1874.0
+offset_bottom = 631.0
+theme_override_font_sizes/font_size = 50
+text = "UI Designer  - Honor Gibson"
+
+[node name="Label10" type="Label" parent="Credits/Panel"]
+offset_left = 1000.0
+offset_top = 700.0
+offset_right = 1874.0
+offset_bottom = 781.0
+theme_override_font_sizes/font_size = 50
+text = "SFX Designer  - James Conroy"
+
+[node name="Label11" type="Label" parent="Credits/Panel"]
+offset_left = 1000.0
+offset_top = 850.0
+offset_right = 1874.0
+offset_bottom = 931.0
+theme_override_font_sizes/font_size = 50
+text = "Music - Jesse Chan"
+
+[node name="File" type="Sprite2D" parent="Credits/Panel"]
+position = Vector2(709, 562)
+scale = Vector2(1.74151, 1.92701)
+texture = ExtResource("9_kl3ux")
 
 [connection signal="ready" from="c" to="." method="_on_c_ready"]
 [connection signal="pressed" from="c/Start" to="." method="StartPressed"]

@@ -21,7 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://dfk8us8if5n2h" path="res://Assets/Audio/SFX/Council/Pink Monkey/fx_PinkHappy_1.wav" id="17_muedu"]
 [ext_resource type="AudioStream" uid="uid://bfhdetfasb2ij" path="res://Assets/Audio/Music/Main menu.wav" id="17_r8vmj"]
 [ext_resource type="AudioStream" uid="uid://bh5bxcb3n5g6g" path="res://Assets/Audio/SFX/Council/Pink Monkey/fx_PinkHappy_2.wav" id="18_2jauo"]
-[ext_resource type="PackedScene" uid="uid://dcjhi4s8xlbf6" path="res://Nodes/dialogue_manager.tscn" id="18_vuj6p"]
+[ext_resource type="PackedScene" path="res://Nodes/dialogue_manager.tscn" id="18_vuj6p"]
 [ext_resource type="AudioStream" uid="uid://0cyds5jj0x4c" path="res://Assets/Audio/SFX/Council/Pink Monkey/fx_PinkAngry_2.wav" id="19_c8tug"]
 [ext_resource type="AudioStream" uid="uid://ctgrvkc5kxv2f" path="res://Assets/Audio/SFX/Council/Purple Monkey/fx_PurpHappy_1.wav" id="20_1nq0n"]
 [ext_resource type="AudioStream" uid="uid://ipqyaxdr1lim" path="res://Assets/Audio/SFX/Council/Purple Monkey/fx_PurpHappy_2.wav" id="21_tffsj"]
