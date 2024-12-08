@@ -28,6 +28,8 @@ var loading = false
 var loadingDelay: float = 0
 
 func _ready():
+	randomize()
+
 	optionsRef = $OptionsMenu
 	optionsRef.visible = true
 	remove_child(optionsRef)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddcm6wnr6e8xo"]
+[gd_scene load_steps=13 format=3 uid="uid://ddcm6wnr6e8xo"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/MainMenu.gd" id="1_5c6j4"]
 [ext_resource type="Texture2D" uid="uid://dqi7bypkotnvd" path="res://Assets/Art/UI/menu.png" id="2_0kdkw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/Menus/MenuButton.gd" id="4_ivnwt"]
 [ext_resource type="Texture2D" uid="uid://hm1nato3sm6v" path="res://Assets/Art/UI/plane.png" id="6_btldg"]
 [ext_resource type="Script" path="res://Scripts/Menus/plane.gd" id="7_u14ja"]
+[ext_resource type="Script" path="res://Scripts/Menus/Credits.gd" id="8_7bipc"]
 
 [sub_resource type="Gradient" id="Gradient_jakxw"]
 offsets = PackedFloat32Array(0.214286, 0.584416)
@@ -18,6 +19,12 @@ width = 256
 height = 128
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_4wyfa"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rcinc"]
+gradient = SubResource("Gradient_4wyfa")
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_5c6j4")
@@ -93,8 +100,54 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_btldg")
 script = ExtResource("7_u14ja")
 
+[node name="FadeToBlack" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_rcinc")
+
+[node name="Credits" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_6plgk")
+script = ExtResource("8_7bipc")
+
+[node name="Panel" type="Panel" parent="Credits"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 62.0
+offset_right = 1847.0
+offset_bottom = 1002.0
+
+[node name="Button" type="Button" parent="Credits/Panel"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 45.0
+offset_right = 225.0
+offset_bottom = 104.0
+text = "BACK"
+
+[node name="Label" type="Label" parent="Credits/Panel"]
+layout_mode = 0
+offset_left = 683.0
+offset_top = 59.0
+offset_right = 1027.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 80
+text = "CREDITS"
+
 [connection signal="ready" from="c" to="." method="_on_c_ready"]
 [connection signal="pressed" from="c/Start" to="." method="StartPressed"]
 [connection signal="pressed" from="c/Credits" to="." method="CreditsPressed"]
 [connection signal="pressed" from="c/Options" to="." method="OptionsPressed"]
 [connection signal="pressed" from="c/Exit" to="." method="ExitPressed"]
+[connection signal="pressed" from="Credits/Panel/Button" to="Credits" method="BackButton"]

@@ -291,6 +291,7 @@ itemList = Array[ExtResource("7_oayf1")]([ExtResource("7_blddn"), ExtResource("8
 [node name="Orange" type="AnimatedSprite3D" parent="Gameplay/Apes"]
 transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, -40.7887, 6.32409, -1.94137)
 sprite_frames = SubResource("SpriteFrames_bnre5")
+animation = &"no"
 
 [node name="Pink" type="AnimatedSprite3D" parent="Gameplay/Apes"]
 transform = Transform3D(-0.0261581, 0, 0.147702, 0, 0.15, 0, -0.147702, 0, -0.0261581, -41.1579, 5.7642, 1.32954)
