@@ -28,6 +28,8 @@ var items: Array[TextureButton]
 
 var clueStuff: Array[Node]
 
+var active: bool
+
 func _ready():
 	bagZone = $Bag
 	selectedCircle = $SelectedCircle
@@ -44,16 +46,19 @@ func AddItem(item: Item):
 
 func ItemGrabbed(item: Node):
 	grabbedItem = item
-	if bagZone.get_rect().has_point(item.global_position) || selectedCircle.get_rect().has_point(item.global_position):
+	if HasPoint(bagZone, item.global_position + (item.size / 2)) || HasPoint(selectedCircle, item.global_position + (item.size / 2)):
 		originalPos = item.global_position
+		print ("new original pos: " + str(originalPos))
 	move_child(grabbedItem, get_child_count() - 1)
 
 func ItemDropped(_item: Node):
+	if !grabbedItem:
+		return
 	var dropPos: Vector2 = get_global_mouse_position()
-	if bagZone.get_rect().has_point(dropPos):
+	if bagZone.get_global_rect().has_point(dropPos):
 		if grabbedItem == itemSelected:
 			itemSelected = null
-	elif selectedCircle.get_rect().has_point(dropPos):
+	elif selectedCircle.get_global_rect().has_point(dropPos):
 		grabbedItem.MoveTo(selectedCircle.global_position + (selectedCircle.size / 2) - (grabbedItem.size / 2))
 		if itemSelected:
 			itemSelected.MoveTo(originalPos)
@@ -82,6 +87,12 @@ func _process(_dt):
 
 func GetRandomBagPos():
 	return Vector2(randf_range(0, bagZone.size.x) + bagZone.global_position.x, randf_range(0, bagZone.size.y) + bagZone.global_position.y)
+
+func HasPoint(zone: Control, pos: Vector2):
+	print(zone.get_global_rect())
+	if pos.x < zone.global_position.x || pos.x > zone.global_position.x + zone.size.x || pos.y < zone.global_position.y || pos.y > zone.global_position.y + zone.size.y:
+		return false
+	return true
 
 func AddClue(day: int, item: ItemData, color: bool, shape: bool, mat: bool):
 	var offset: int = 0

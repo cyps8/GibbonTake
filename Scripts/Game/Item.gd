@@ -5,11 +5,15 @@ class_name Item extends TextureButton
 var moveTween: Tween
 
 func Grab():
+	if !Inventory.ins.active:
+		return
 	if moveTween != null:
 		moveTween.kill()
 	Inventory.ins.ItemGrabbed(self)
 
 func Drop():
+	if !Inventory.ins.active:
+		return
 	Inventory.ins.ItemDropped(self)
 
 func SetData(setData: ItemData):

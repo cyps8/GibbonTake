@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://dits1em4vvtmn"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://dits1em4vvtmn"]
 
 [ext_resource type="FontFile" uid="uid://cai8wo1tl3hn1" path="res://Assets/Art/Fonts/Gambado Sans Forte.ttf" id="1_8pb5x"]
 [ext_resource type="Texture2D" uid="uid://dj8ti1sbn6ryv" path="res://Assets/Art/UI/Button.png" id="1_bltnk"]
+[ext_resource type="Texture2D" uid="uid://sw8tlvyywnp" path="res://Assets/Art/UI/banana.png" id="2_hedi4"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3jx71"]
 load_path = "res://.godot/imported/Button.png-f3942555141d616544ef82cee9e9571b.ctex"
@@ -29,6 +30,30 @@ load_path = "res://.godot/imported/Button.png-f3942555141d616544ef82cee9e9571b.c
 texture = SubResource("CompressedTexture2D_bcr4d")
 modulate_color = Color(0.576471, 0.584314, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1ep2"]
+bg_color = Color(0.972549, 0.639216, 0.133333, 1)
+border_width_left = 5
+border_width_top = 8
+border_width_right = 5
+border_width_bottom = 8
+border_color = Color(0.972549, 0.639216, 0.133333, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81auj"]
+bg_color = Color(0.4, 0.223529, 0.192157, 1)
+border_width_left = 5
+border_width_top = 7
+border_width_bottom = 7
+border_color = Color(0.4, 0.223529, 0.192157, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvylf"]
 bg_color = Color(0.672289, 0.38661, 0.0207075, 1)
 border_width_left = 20
@@ -50,4 +75,10 @@ Button/styles/focus = SubResource("StyleBoxEmpty_enh6m")
 Button/styles/hover = SubResource("StyleBoxTexture_n1tno")
 Button/styles/normal = SubResource("StyleBoxTexture_3ob3s")
 Button/styles/pressed = SubResource("StyleBoxTexture_lfxs8")
+HSlider/icons/grabber = ExtResource("2_hedi4")
+HSlider/icons/grabber_disabled = ExtResource("2_hedi4")
+HSlider/icons/grabber_highlight = ExtResource("2_hedi4")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_c1ep2")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_c1ep2")
+HSlider/styles/slider = SubResource("StyleBoxFlat_81auj")
 Panel/styles/panel = SubResource("StyleBoxFlat_hvylf")

@@ -50,8 +50,8 @@ func SpawnItems(amount: int):
 			rand = randi_range(0, itemList.size() - 1)
 		noRepeat.append(rand)
 		item.SetData(itemList[rand])
-		item.global_position = Inventory.ins.GetRandomBagPos() - (item.size / 2)
 		Inventory.ins.AddItem(item)
+		item.global_position = Inventory.ins.GetRandomBagPos() - (item.size / 2)
 		wantedItem = item.data
 
 func ResetInventory():
@@ -127,8 +127,10 @@ func ShowInventory():
 	Inventory.ins.position = Vector2(0, Inventory.ins.size.y)
 	var tween: Tween = create_tween()
 	tween.tween_property(Inventory.ins, "position", Vector2(0, 0), 1.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	tween.tween_callback(func(): Inventory.ins.active = true)
 
 func HideInventory():
 	Inventory.ins.position = Vector2.ZERO
+	Inventory.ins.active = false
 	var tween: Tween = create_tween()
 	tween.tween_property(Inventory.ins, "position", Vector2(0, Inventory.ins.size.y), 1.5).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
