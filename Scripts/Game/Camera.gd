@@ -24,6 +24,9 @@ func _ready():
 	position = spawnPos
 	currentRotation = forward
 
+func BackToStart():
+	position = spawnPos
+
 func _process(_dt):
 	dt = _dt
 	rotation_degrees = currentRotation

@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://b67objofffata"]
+[gd_scene load_steps=77 format=3 uid="uid://b67objofffata"]
 
 [ext_resource type="Script" path="res://Scripts/Game/GameManager.gd" id="1_kg5ow"]
 [ext_resource type="Script" path="res://Scripts/Menus/Pause.gd" id="2_wp568"]
@@ -217,6 +217,12 @@ Button/styles/hover = SubResource("StyleBoxTexture_7e4uj")
 Button/styles/normal = SubResource("StyleBoxTexture_pkolx")
 Button/styles/pressed = SubResource("StyleBoxTexture_7e4uj")
 
+[sub_resource type="Gradient" id="Gradient_7iycb"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h1e28"]
+gradient = SubResource("Gradient_7iycb")
+
 [node name="Game" type="Node"]
 script = ExtResource("1_kg5ow")
 
@@ -417,6 +423,14 @@ offset_top = 98.0
 offset_right = 1757.0
 offset_bottom = 753.025
 
+[node name="SpawnZone" type="Panel" parent="Gameplay/c/Inventory"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 743.0
+offset_top = 169.0
+offset_right = 1600.0
+offset_bottom = 691.0
+
 [node name="Clues" type="TextureButton" parent="Gameplay/c/Inventory"]
 layout_mode = 0
 offset_left = 7.0
@@ -535,6 +549,35 @@ texture = ExtResource("53_fmsdq")
 position = Vector2(470, 259)
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("54_1e0li")
+
+[node name="Black" type="TextureRect" parent="Gameplay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_h1e28")
+
+[node name="Label" type="Label" parent="Gameplay/Black"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.5
+offset_top = -137.0
+offset_right = 400.5
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_wu3ge")
+theme_override_font_sizes/font_size = 100
+text = "DAY 0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Pause/c/Panel/Resume" to="Pause" method="ResumePressed"]
 [connection signal="pressed" from="Pause/c/Panel/Options" to="Pause" method="OptionsPressed"]

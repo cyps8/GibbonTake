@@ -7,7 +7,7 @@
 script = ExtResource("1_jo8i1")
 name = "Fez"
 icon = ExtResource("1_ryx36")
-description = "This is my hat! I got it from my gran on Christmas years ago..."
+description = "This is my hat! It's very important to me..."
 color = 0
 shape = 0
 material = 1

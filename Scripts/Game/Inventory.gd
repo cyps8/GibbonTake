@@ -11,6 +11,8 @@ var grabbedItem: Item
 
 var bagZone: Panel
 
+var spawnZone: Panel
+
 var selectedCircle: Panel
 
 var itemSelected: Item
@@ -32,6 +34,7 @@ var active: bool
 
 func _ready():
 	bagZone = $Bag
+	spawnZone = $SpawnZone
 	selectedCircle = $SelectedCircle
 	giveItemButton = $GiveItem
 	description = $Description
@@ -71,7 +74,6 @@ func GiveItem():
 	if itemSelected:
 		Gameplay.ins.SubmitItem(itemSelected.data)
 		SFXPlayer.ins.PlaySound(1)
-	Gameplay.ins.itemList.erase(itemSelected.data)
 	items.erase(itemSelected)
 	itemSelected.queue_free()
 	itemSelected = null
@@ -86,7 +88,7 @@ func _process(_dt):
 		descriptionDesc.text = itemSelected.data.description
 
 func GetRandomBagPos():
-	return Vector2(randf_range(0, bagZone.size.x) + bagZone.global_position.x, randf_range(0, bagZone.size.y) + bagZone.global_position.y)
+	return Vector2(randf_range(0, spawnZone.size.x) + spawnZone.global_position.x, randf_range(0, spawnZone.size.y) + spawnZone.global_position.y)
 
 func HasPoint(zone: Control, pos: Vector2):
 	print(zone.get_global_rect())

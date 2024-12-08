@@ -45,6 +45,7 @@ func _ready():
 		ChangeScene(Scene.GAME)
 
 func ChangeScene(newScene: Scene):
+	DialogueMan.ins.HideAllDialogue()
 	if currentSceneNode != null:
 		currentSceneNode.queue_free()
 
