@@ -23,3 +23,9 @@ func PlaySound(soundId: int, type: SoundType = SoundType.SFX, volume: float = 1,
 	add_child(sound)
 	sound.finished.connect(Callable(sound.queue_free))
 	sound.play()
+
+func KillSounds():
+	for sound in get_children():
+		if sound is AudioStreamPlayer:
+			sound.stop()
+			sound.queue_free()

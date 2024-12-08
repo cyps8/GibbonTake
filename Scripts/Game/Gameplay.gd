@@ -33,7 +33,14 @@ var intro: bool = true
 
 var actualDay: int = 0
 
+var gameOver: bool = false
+
 func _ready():
+	DialogueMan.ins.HideAllDialogue()
+
+	$GameOver.modulate.a = 0
+	$GameOver.visible = false
+
 	camRef = $Camera
 
 	apeOrange = $Apes/Orange
@@ -68,6 +75,8 @@ func Intro():
 	delayTween.tween_callback(func (): introSequence += 1)
 
 func _process(_dt):
+	if !intro:
+		return
 	if Input.is_action_just_pressed("MouseClick"):
 		ProgressIntro()
 
@@ -150,6 +159,7 @@ func ProgressIntro():
 		delayTween.tween_callback(NewDay)
 
 func NewDay():
+	ResetInventory()
 	actualDay += 1
 	DisplayDay()
 	camRef.BackToStart()
@@ -204,33 +214,35 @@ func SubmitItem(item: ItemData):
 		return
 	MonkeyScene()
 
+var apeTween: Tween
+
 func MonkeyScene():
 	SFXPlayer.ins.PlaySound(2)
-	var timeTween: Tween = create_tween()
-	timeTween.tween_interval(4.0)
-	timeTween.tween_callback(camRef.ZoomTo.bind(0.4, 2.0))
-	timeTween.tween_callback(camRef.LookAt.bind(apePurple))
-	timeTween.tween_interval(2.0)
-	timeTween.tween_callback(SetApeYesNo.bind(apePurple, submittedItem.color == wantedItem.color))
-	timeTween.tween_interval(1.0)
-	timeTween.tween_callback(camRef.LookAt.bind(apePink))
-	timeTween.tween_interval(2.0)
-	timeTween.tween_callback(SetApeYesNo.bind(apePink, submittedItem.shape == wantedItem.shape))
-	timeTween.tween_interval(1.0)
-	timeTween.tween_callback(camRef.LookAt.bind(apeBlue))
-	timeTween.tween_interval(2.0)
-	timeTween.tween_callback(SetApeYesNo.bind(apeBlue, submittedItem.material == wantedItem.material))
-	timeTween.tween_interval(1.0)
-	timeTween.tween_callback(camRef.LookAt.bind(apeOrange))
-	timeTween.tween_interval(2.0)
-	timeTween.tween_callback(SetApeYesNo.bind(apeOrange, submittedItem.color == wantedItem.color && submittedItem.shape == wantedItem.shape && submittedItem.material == wantedItem.material))
-	timeTween.tween_interval(1.0)
-	timeTween.tween_callback(ApeDialogue)
-	timeTween.tween_callback(camRef.ZoomTo.bind(1.0, 1.0))
-	timeTween.tween_callback(camRef.LookAt)
-	timeTween.tween_interval(2.0)
+	apeTween = create_tween()
+	apeTween.tween_interval(4.0)
+	apeTween.tween_callback(camRef.ZoomTo.bind(0.4, 2.0))
+	apeTween.tween_callback(camRef.LookAt.bind(apePurple))
+	apeTween.tween_interval(2.0)
+	apeTween.tween_callback(SetApeYesNo.bind(apePurple, submittedItem.color == wantedItem.color))
+	apeTween.tween_interval(1.0)
+	apeTween.tween_callback(camRef.LookAt.bind(apePink))
+	apeTween.tween_interval(2.0)
+	apeTween.tween_callback(SetApeYesNo.bind(apePink, submittedItem.shape == wantedItem.shape))
+	apeTween.tween_interval(1.0)
+	apeTween.tween_callback(camRef.LookAt.bind(apeBlue))
+	apeTween.tween_interval(2.0)
+	apeTween.tween_callback(SetApeYesNo.bind(apeBlue, submittedItem.material == wantedItem.material))
+	apeTween.tween_interval(1.0)
+	apeTween.tween_callback(camRef.LookAt.bind(apeOrange))
+	apeTween.tween_interval(2.0)
+	apeTween.tween_callback(SetApeYesNo.bind(apeOrange, submittedItem.color == wantedItem.color && submittedItem.shape == wantedItem.shape && submittedItem.material == wantedItem.material))
+	apeTween.tween_interval(1.0)
+	apeTween.tween_callback(ApeDialogue)
+	apeTween.tween_callback(camRef.ZoomTo.bind(1.0, 1.0))
+	apeTween.tween_callback(camRef.LookAt)
+	apeTween.tween_interval(2.0)
 
-	timeTween.tween_callback(WhatNext)
+	apeTween.tween_callback(WhatNext)
 
 func ApeDialogue():
 	if submittedItem.color == wantedItem.color && submittedItem.shape == wantedItem.shape && submittedItem.material == wantedItem.material:
@@ -255,6 +267,7 @@ func WhatNext():
 		var delayTween: Tween = create_tween()
 		delayTween.tween_interval(0.5)
 		delayTween.tween_callback(FadeBlack.bind(1.0, 2.0))
+		delayTween.tween_interval(2.0)
 		delayTween.tween_callback(NewDay)
 	elif currentDay == 3:
 		Lose()
@@ -262,7 +275,18 @@ func WhatNext():
 		NextAttempt()
 
 func Lose():
-	pass
+	gameOver = true
+	if actualDay > 1:
+		$GameOver/Panel/DaysSurvived.text = "You survived " + str(actualDay) + " days"
+	else:
+		$GameOver/Panel/DaysSurvived.text = "You survived " + str(actualDay) + " day"
+	var delayTween: Tween = create_tween()
+	delayTween.tween_interval(0.5)
+	delayTween.tween_callback(SFXPlayer.ins.PlaySound.bind(16))
+	delayTween.tween_callback(FadeBlack.bind(1.0, 2.0))
+	delayTween.tween_interval(1.5)
+	delayTween.tween_callback(func(): $GameOver.visible = true)
+	delayTween.tween_property($GameOver, "modulate", Color(1, 1, 1, 1), 1.5)
 
 func NextAttempt():
 	AddClue()
@@ -300,3 +324,42 @@ func DisplayDay():
 	tween.tween_property($Black/Label, "modulate:a", 1.0, 1.0).set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
 	tween.tween_interval(1.0)
 	tween.tween_property($Black/Label, "modulate:a", 0.0, 1.0).set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN)
+
+func PlayAgainPressed():
+	if !gameOver:
+		return
+	$GameOver.visible = false
+	$GameOver.modulate = Color(1, 1, 1, 0)
+	SFXPlayer.ins.KillSounds()
+	gameOver = false
+	DialogueMan.ins.HideAllDialogue()
+	actualDay = 0
+	currentDay = 0
+	ResetInventory()
+	HideInventory()
+	FadeBlack(1.0, 2.0)
+	var delayTween: Tween = create_tween()
+	delayTween.tween_interval(2.0)
+	delayTween.tween_callback(NewDay)
+
+func MainMenuPressed():
+	if !gameOver:
+		return
+	Root.ins.ChangeScene(Root.Scene.MAINMENU)
+
+func SkipTutorial():
+	intro = false
+	HideIntroDialogue()
+	DialogueMan.ins.HideAllDialogue()
+	actualDay = 0
+	currentDay = 0
+	ResetInventory()
+	HideInventory()
+	if apeTween != null:
+		apeTween.kill()
+	camRef.ZoomTo(1.0)
+	camRef.LookAt()
+	FadeBlack(1.0, 2.0)
+	var delayTween: Tween = create_tween()
+	delayTween.tween_interval(2.0)
+	delayTween.tween_callback(NewDay)

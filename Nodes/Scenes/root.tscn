@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ctowc83yhrys3"]
+[gd_scene load_steps=32 format=3 uid="uid://ctowc83yhrys3"]
 
 [ext_resource type="Script" path="res://Scripts/root.gd" id="1_v1f3b"]
 [ext_resource type="PackedScene" uid="uid://b67objofffata" path="res://Nodes/Scenes/game.tscn" id="2_1o11g"]
@@ -30,6 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://b325bxw8sy6c2" path="res://Assets/Audio/SFX/Council/Blue Monkey/fx_BlueHappy_1.wav" id="24_opewn"]
 [ext_resource type="AudioStream" uid="uid://qo82ig1i7whv" path="res://Assets/Audio/SFX/Council/Blue Monkey/fx_BlueHappy_2.wav" id="25_x1mi0"]
 [ext_resource type="AudioStream" uid="uid://w4vrsvvjxn6p" path="res://Assets/Audio/SFX/Council/Blue Monkey/fx_BlueAngry_1.wav" id="26_5kvot"]
+[ext_resource type="AudioStream" uid="uid://3jdl18yomg4r" path="res://Assets/Audio/SFX/fx_GameEnd_1.wav" id="27_288q5"]
 
 [node name="Root" type="Node"]
 process_mode = 3
@@ -182,7 +183,7 @@ script = ExtResource("9_5spwx")
 
 [node name="SFXPlayer" type="Node" parent="."]
 script = ExtResource("7_8th76")
-sounds = Array[AudioStream]([ExtResource("11_oyaw3"), ExtResource("9_vkv3o"), ExtResource("12_yrp1g"), ExtResource("14_8638f"), ExtResource("15_bq3os"), ExtResource("16_kpmod"), ExtResource("17_muedu"), ExtResource("18_2jauo"), ExtResource("19_c8tug"), ExtResource("20_1nq0n"), ExtResource("21_tffsj"), ExtResource("22_484ur"), ExtResource("23_dlk6t"), ExtResource("24_opewn"), ExtResource("25_x1mi0"), ExtResource("26_5kvot")])
+sounds = Array[AudioStream]([ExtResource("11_oyaw3"), ExtResource("9_vkv3o"), ExtResource("12_yrp1g"), ExtResource("14_8638f"), ExtResource("15_bq3os"), ExtResource("16_kpmod"), ExtResource("17_muedu"), ExtResource("18_2jauo"), ExtResource("19_c8tug"), ExtResource("20_1nq0n"), ExtResource("21_tffsj"), ExtResource("22_484ur"), ExtResource("23_dlk6t"), ExtResource("24_opewn"), ExtResource("25_x1mi0"), ExtResource("26_5kvot"), ExtResource("27_288q5")])
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"Music"

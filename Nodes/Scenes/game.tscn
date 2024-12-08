@@ -227,7 +227,7 @@ gradient = SubResource("Gradient_7iycb")
 script = ExtResource("1_kg5ow")
 
 [node name="Pause" type="CanvasLayer" parent="."]
-layer = 25
+layer = 30
 script = ExtResource("2_wp568")
 
 [node name="c" type="Control" parent="Pause"]
@@ -247,7 +247,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -131.0
-offset_top = -175.0
+offset_top = -251.0
 offset_right = 143.0
 offset_bottom = 179.0
 grow_horizontal = 2
@@ -255,28 +255,37 @@ grow_vertical = 2
 
 [node name="Resume" type="Button" parent="Pause/c/Panel"]
 layout_mode = 0
-offset_left = 39.0
-offset_top = 24.0
-offset_right = 231.0
-offset_bottom = 98.0
+offset_left = 40.0
+offset_top = 31.0
+offset_right = 232.0
+offset_bottom = 105.0
 text = "RESUME
 "
 
+[node name="SkipTutorial" type="Button" parent="Pause/c/Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 121.0
+offset_right = 232.0
+offset_bottom = 195.0
+theme_override_font_sizes/font_size = 20
+text = "SKIP TUTORIAL"
+
 [node name="Options" type="Button" parent="Pause/c/Panel"]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 133.0
-offset_right = 228.0
-offset_bottom = 207.0
+offset_left = 40.0
+offset_top = 219.0
+offset_right = 232.0
+offset_bottom = 293.0
 text = "OPTIONS
 "
 
 [node name="MainMenu" type="Button" parent="Pause/c/Panel"]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 244.0
-offset_right = 228.0
-offset_bottom = 318.0
+offset_left = 40.0
+offset_top = 311.0
+offset_right = 232.0
+offset_bottom = 385.0
 text = "MAIN MENU
 "
 
@@ -293,6 +302,7 @@ scale = Vector2(7.79687, 9.33594)
 texture = SubResource("GradientTexture2D_tuti5")
 
 [node name="Gameplay" type="CanvasLayer" parent="."]
+process_mode = 1
 script = ExtResource("5_fyqy3")
 itemIns = ExtResource("5_2a8bf")
 itemList = Array[ExtResource("7_oayf1")]([ExtResource("7_blddn"), ExtResource("8_fqo2m"), ExtResource("9_egn5g"), ExtResource("10_q6a7x"), ExtResource("11_lvuo1"), ExtResource("12_gppo1"), ExtResource("13_45bh0"), ExtResource("14_nui3n"), ExtResource("15_bgmkm"), ExtResource("16_cxki4"), ExtResource("17_gfrok"), ExtResource("18_agd2f"), ExtResource("19_ese46"), ExtResource("20_i7bng"), ExtResource("21_dgykf"), ExtResource("22_1odra"), ExtResource("23_hvry8")])
@@ -579,7 +589,68 @@ text = "DAY 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GameOver" type="Control" parent="Gameplay"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_wu3ge")
+
+[node name="Panel" type="Panel" parent="Gameplay/GameOver"]
+z_index = 5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.0
+offset_top = -259.0
+offset_right = 342.0
+offset_bottom = 259.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DaysSurvived" type="Label" parent="Gameplay/GameOver/Panel"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 230.0
+offset_right = 572.0
+offset_bottom = 271.0
+theme_override_font_sizes/font_size = 40
+text = "You survived 20 days"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Gameplay/GameOver/Panel"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 70.0
+offset_right = 586.0
+offset_bottom = 151.0
+theme_override_font_sizes/font_size = 80
+text = "GAME OVER"
+
+[node name="PlayAgain" type="Button" parent="Gameplay/GameOver/Panel"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 346.0
+offset_right = 323.0
+offset_bottom = 435.0
+text = "Play Again"
+
+[node name="MainMenu" type="Button" parent="Gameplay/GameOver/Panel"]
+layout_mode = 0
+offset_left = 365.0
+offset_top = 343.0
+offset_right = 583.0
+offset_bottom = 432.0
+text = "Main Menu"
+
 [connection signal="pressed" from="Pause/c/Panel/Resume" to="Pause" method="ResumePressed"]
+[connection signal="pressed" from="Pause/c/Panel/SkipTutorial" to="Pause" method="SkipTutorialPressed"]
 [connection signal="pressed" from="Pause/c/Panel/Options" to="Pause" method="OptionsPressed"]
 [connection signal="pressed" from="Pause/c/Panel/MainMenu" to="Pause" method="MainMenuPressed"]
 [connection signal="animation_changed" from="Gameplay/Apes/Orange" to="Gameplay/Apes/Orange" method="_on_animation_changed"]
@@ -587,3 +658,5 @@ vertical_alignment = 1
 [connection signal="animation_changed" from="Gameplay/Apes/Purple" to="Gameplay/Apes/Purple" method="_on_animation_changed"]
 [connection signal="animation_changed" from="Gameplay/Apes/Blue" to="Gameplay/Apes/Blue" method="_on_animation_changed"]
 [connection signal="pressed" from="Gameplay/c/Inventory/GiveItem" to="Gameplay/c/Inventory" method="GiveItem"]
+[connection signal="pressed" from="Gameplay/GameOver/Panel/PlayAgain" to="Gameplay" method="PlayAgainPressed"]
+[connection signal="pressed" from="Gameplay/GameOver/Panel/MainMenu" to="Gameplay" method="MainMenuPressed"]

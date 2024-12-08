@@ -22,13 +22,11 @@ func _process(_dt):
 		TogglePause()
 
 func TogglePause():
+	if Gameplay.ins.gameOver:
+		return
 	paused = !paused
 	get_tree().paused = paused
 	if paused:
 		add_child(pauseMenuRef)
 	else:
 		remove_child(pauseMenuRef)
-
-
-func _on_orange_animation_changed() -> void:
-	pass # Replace with function body.

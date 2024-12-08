@@ -46,6 +46,7 @@ func _ready():
 
 func ChangeScene(newScene: Scene):
 	DialogueMan.ins.HideAllDialogue()
+	SFXPlayer.ins.KillSounds()
 	if currentSceneNode != null:
 		currentSceneNode.queue_free()
 
