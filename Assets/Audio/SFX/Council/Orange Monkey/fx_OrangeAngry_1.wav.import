@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bw77guam31r5n"
+path="res://.godot/imported/fx_OrangeAngry_1.wav-cb6fb53cf7eb94537696c919ca4b91fe.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Council/Orange Monkey/fx_OrangeAngry_1.wav"
+dest_files=["res://.godot/imported/fx_OrangeAngry_1.wav-cb6fb53cf7eb94537696c919ca4b91fe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

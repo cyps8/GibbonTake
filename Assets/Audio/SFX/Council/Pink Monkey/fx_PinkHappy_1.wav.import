@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dfk8us8if5n2h"
+path="res://.godot/imported/fx_PinkHappy_1.wav-63e5dd8d5dc2722aeca11b9780e45927.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Council/Pink Monkey/fx_PinkHappy_1.wav"
+dest_files=["res://.godot/imported/fx_PinkHappy_1.wav-63e5dd8d5dc2722aeca11b9780e45927.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

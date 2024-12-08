@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://b67objofffata"]
+[gd_scene load_steps=75 format=3 uid="uid://b67objofffata"]
 
 [ext_resource type="Script" path="res://Scripts/Game/GameManager.gd" id="1_kg5ow"]
 [ext_resource type="Script" path="res://Scripts/Menus/Pause.gd" id="2_wp568"]
@@ -43,14 +43,18 @@
 [ext_resource type="Texture2D" uid="uid://db2au2t60t67h" path="res://Assets/Art/Apes/orange no.png" id="26_7uoaj"]
 [ext_resource type="Texture2D" uid="uid://bmfal57aby0n8" path="res://Assets/Art/Apes/purple.png" id="27_ufp61"]
 [ext_resource type="Texture2D" uid="uid://du620kc3ib8ft" path="res://Assets/Art/Apes/orange yes.png" id="27_xj84x"]
+[ext_resource type="Script" path="res://Scripts/Game/orange.gd" id="28_4ke8b"]
 [ext_resource type="Texture2D" uid="uid://toy8f5m0w31w" path="res://Assets/Art/Apes/blue.png" id="28_k8sgf"]
 [ext_resource type="Script" path="res://Scripts/Game/Camera.gd" id="29_cgfhv"]
 [ext_resource type="Texture2D" uid="uid://cwru0nxlloudf" path="res://Assets/Art/Apes/pink no.png" id="29_uiamm"]
 [ext_resource type="Texture2D" uid="uid://b3ksmpn0xykht" path="res://Assets/Art/Apes/pink yes.png" id="30_yh86v"]
+[ext_resource type="Script" path="res://Scripts/Game/pink.gd" id="32_454ad"]
 [ext_resource type="Texture2D" uid="uid://cx2aeeh11uiv" path="res://Assets/Art/Apes/purple no.png" id="32_dqheh"]
 [ext_resource type="Texture2D" uid="uid://prmuun6ltbve" path="res://Assets/Art/Apes/purple yes.png" id="33_7330e"]
 [ext_resource type="Texture2D" uid="uid://q4lfhlapkns0" path="res://Assets/Art/Apes/blue no.png" id="35_ete01"]
 [ext_resource type="Texture2D" uid="uid://ouucib5udvs3" path="res://Assets/Art/Apes/blue yes.png" id="36_jr2yn"]
+[ext_resource type="Script" path="res://Nodes/Scenes/purple.gd" id="36_s7qlr"]
+[ext_resource type="Script" path="res://Nodes/Scenes/blue.gd" id="40_jm1v4"]
 [ext_resource type="Texture2D" uid="uid://cbj4og8cjpexc" path="res://Assets/Art/Apes/purple circle.png" id="52_th4uc"]
 [ext_resource type="Texture2D" uid="uid://fegeffe4qxi6" path="res://Assets/Art/Apes/pink circle.png" id="53_fmsdq"]
 [ext_resource type="Texture2D" uid="uid://50cdukcwixqk" path="res://Assets/Art/Apes/blue circle.png" id="54_1e0li"]
@@ -76,6 +80,8 @@ width = 256
 height = 128
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="GDScript" id="GDScript_2ib8b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bnre5"]
 animations = [{
@@ -103,6 +109,7 @@ animations = [{
 "name": &"yes",
 "speed": 5.0
 }]
+script = SubResource("GDScript_2ib8b")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ggna2"]
 animations = [{
@@ -291,18 +298,22 @@ itemList = Array[ExtResource("7_oayf1")]([ExtResource("7_blddn"), ExtResource("8
 [node name="Orange" type="AnimatedSprite3D" parent="Gameplay/Apes"]
 transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, -40.7887, 6.32409, -1.94137)
 sprite_frames = SubResource("SpriteFrames_bnre5")
+script = ExtResource("28_4ke8b")
 
 [node name="Pink" type="AnimatedSprite3D" parent="Gameplay/Apes"]
 transform = Transform3D(-0.0261581, 0, 0.147702, 0, 0.15, 0, -0.147702, 0, -0.0261581, -41.1579, 5.7642, 1.32954)
 sprite_frames = SubResource("SpriteFrames_ggna2")
+script = ExtResource("32_454ad")
 
 [node name="Purple" type="AnimatedSprite3D" parent="Gameplay/Apes"]
 transform = Transform3D(-0.0676246, 0, 0.133891, 0, 0.15, 0, -0.133891, 0, -0.0676246, -40.2759, 5.86132, 4.36872)
 sprite_frames = SubResource("SpriteFrames_8l2hs")
+script = ExtResource("36_s7qlr")
 
 [node name="Blue" type="AnimatedSprite3D" parent="Gameplay/Apes"]
 transform = Transform3D(0.0538676, 0, 0.139994, 0, 0.15, 0, -0.139994, 0, 0.0538676, -40.8191, 5.83391, -6.57301)
 sprite_frames = SubResource("SpriteFrames_k56tq")
+script = ExtResource("40_jm1v4")
 
 [node name="Camera" type="Camera3D" parent="Gameplay"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.706, 5.779, -1.403)
@@ -528,4 +539,8 @@ texture = ExtResource("54_1e0li")
 [connection signal="pressed" from="Pause/c/Panel/Resume" to="Pause" method="ResumePressed"]
 [connection signal="pressed" from="Pause/c/Panel/Options" to="Pause" method="OptionsPressed"]
 [connection signal="pressed" from="Pause/c/Panel/MainMenu" to="Pause" method="MainMenuPressed"]
+[connection signal="animation_changed" from="Gameplay/Apes/Orange" to="Gameplay/Apes/Orange" method="_on_animation_changed"]
+[connection signal="animation_changed" from="Gameplay/Apes/Pink" to="Gameplay/Apes/Pink" method="_on_animation_changed"]
+[connection signal="animation_changed" from="Gameplay/Apes/Purple" to="Gameplay/Apes/Purple" method="_on_animation_changed"]
+[connection signal="animation_changed" from="Gameplay/Apes/Blue" to="Gameplay/Apes/Blue" method="_on_animation_changed"]
 [connection signal="pressed" from="Gameplay/c/Inventory/GiveItem" to="Gameplay/c/Inventory" method="GiveItem"]

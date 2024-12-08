@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b325bxw8sy6c2"
+path="res://.godot/imported/fx_BlueHappy_1.wav-f5bf83eec3b31478fd35b2b361f4de88.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Council/Blue Monkey/fx_BlueHappy_1.wav"
+dest_files=["res://.godot/imported/fx_BlueHappy_1.wav-f5bf83eec3b31478fd35b2b361f4de88.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
