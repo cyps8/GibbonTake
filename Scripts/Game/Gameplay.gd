@@ -385,6 +385,7 @@ func MainMenuPressed():
 
 func SkipTutorial():
 	intro = false
+	Inventory.ins.grabbedItem = null
 	HideIntroDialogue()
 	DialogueMan.ins.HideAllDialogue()
 	actualDay = 0

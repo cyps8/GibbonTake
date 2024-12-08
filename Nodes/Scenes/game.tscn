@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://b67objofffata"]
+[gd_scene load_steps=77 format=3 uid="uid://b67objofffata"]
 
 [ext_resource type="Script" path="res://Scripts/Game/GameManager.gd" id="1_kg5ow"]
 [ext_resource type="Script" path="res://Scripts/Menus/Pause.gd" id="2_wp568"]
@@ -55,7 +55,6 @@
 [ext_resource type="Texture2D" uid="uid://ouucib5udvs3" path="res://Assets/Art/Apes/blue yes.png" id="36_jr2yn"]
 [ext_resource type="Script" path="res://Nodes/Scenes/purple.gd" id="36_s7qlr"]
 [ext_resource type="Script" path="res://Nodes/Scenes/blue.gd" id="40_jm1v4"]
-[ext_resource type="Texture2D" uid="uid://c6s0hs2y06caf" path="res://Assets/Art/Other/Starwberry.png" id="42_17o3h"]
 [ext_resource type="Texture2D" uid="uid://cbj4og8cjpexc" path="res://Assets/Art/Apes/purple circle.png" id="52_th4uc"]
 [ext_resource type="Texture2D" uid="uid://fegeffe4qxi6" path="res://Assets/Art/Apes/pink circle.png" id="53_fmsdq"]
 [ext_resource type="Texture2D" uid="uid://50cdukcwixqk" path="res://Assets/Art/Apes/blue circle.png" id="54_1e0li"]
@@ -345,7 +344,6 @@ top_level = true
 
 [node name="ShowItem" type="Sprite3D" parent="Gameplay/Camera"]
 transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, 0, -2, -2.259)
-texture = ExtResource("42_17o3h")
 
 [node name="c" type="Control" parent="Gameplay"]
 layout_mode = 3
