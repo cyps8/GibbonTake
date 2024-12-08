@@ -179,53 +179,67 @@ offset_bottom = 931.0
 theme_override_font_sizes/font_size = 50
 text = "MuSiC"
 
-[node name="Label6" type="Label" parent="Credits/Panel"]
+[node name="Label6" type="RichTextLabel" parent="Credits/Panel"]
+layout_mode = 0
 offset_left = 1000.0
 offset_top = 200.0
-offset_right = 1595.0
-offset_bottom = 281.0
-theme_override_font_sizes/font_size = 50
-text = "Lead Programmer - Cypri"
+offset_right = 1658.0
+offset_bottom = 307.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[url=]Lead Programmer - Cypri[/url]"
+fit_content = true
 
-[node name="Label7" type="Label" parent="Credits/Panel"]
+[node name="Label7" type="RichTextLabel" parent="Credits/Panel"]
+layout_mode = 0
 offset_left = 1000.0
 offset_top = 350.0
 offset_right = 1874.0
 offset_bottom = 431.0
-theme_override_font_sizes/font_size = 50
-text = "3D Artist - Jack Teviotdale"
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[url=]3D Artist - Jack Teviotdale[/url]"
 
-[node name="Label8" type="Label" parent="Credits/Panel"]
+[node name="Label8" type="RichTextLabel" parent="Credits/Panel"]
+layout_mode = 0
 offset_left = 1000.0
 offset_top = 450.0
 offset_right = 1892.0
 offset_bottom = 531.0
-theme_override_font_sizes/font_size = 50
-text = "2D Artist - Chloe Gardiner"
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[url=]2D Artist - Chloe Gardiner[/url]
+"
 
-[node name="Label9" type="Label" parent="Credits/Panel"]
+[node name="Label9" type="RichTextLabel" parent="Credits/Panel"]
+layout_mode = 0
 offset_left = 1000.0
 offset_top = 550.0
 offset_right = 1874.0
 offset_bottom = 631.0
-theme_override_font_sizes/font_size = 50
-text = "UI Designer  - Honor Gibson"
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[url=]UI Designer  - Honor Gibson[/url]"
 
-[node name="Label10" type="Label" parent="Credits/Panel"]
+[node name="Label10" type="RichTextLabel" parent="Credits/Panel"]
+layout_mode = 0
 offset_left = 1000.0
 offset_top = 700.0
 offset_right = 1874.0
 offset_bottom = 781.0
-theme_override_font_sizes/font_size = 50
-text = "SFX Designer  - James Conroy"
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[url=]SFX Designer  - James Conroy[/url]"
 
-[node name="Label11" type="Label" parent="Credits/Panel"]
+[node name="Label11" type="RichTextLabel" parent="Credits/Panel"]
+layout_mode = 0
 offset_left = 1000.0
 offset_top = 850.0
 offset_right = 1874.0
 offset_bottom = 931.0
-theme_override_font_sizes/font_size = 50
-text = "Music - Jesse Chan"
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[url=]Music - Jesse Chan[/url]"
 
 [node name="File" type="Sprite2D" parent="Credits/Panel"]
 position = Vector2(709, 562)
@@ -238,3 +252,9 @@ texture = ExtResource("9_kl3ux")
 [connection signal="pressed" from="c/Options" to="." method="OptionsPressed"]
 [connection signal="pressed" from="c/Exit" to="." method="ExitPressed"]
 [connection signal="pressed" from="Credits/Panel/Button" to="Credits" method="BackButton"]
+[connection signal="meta_clicked" from="Credits/Panel/Label6" to="Credits" method="_on_label_meta_clicked"]
+[connection signal="meta_clicked" from="Credits/Panel/Label7" to="Credits" method="_on_label_meta_clicked"]
+[connection signal="meta_clicked" from="Credits/Panel/Label8" to="Credits" method="_on_label_meta_clicked"]
+[connection signal="meta_clicked" from="Credits/Panel/Label9" to="Credits" method="_on_label_meta_clicked"]
+[connection signal="meta_clicked" from="Credits/Panel/Label10" to="Credits" method="_on_label_meta_clicked"]
+[connection signal="meta_clicked" from="Credits/Panel/Label11" to="Credits" method="_on_label_meta_clicked"]
