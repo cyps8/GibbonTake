@@ -14,8 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://bgpmrkttug5d2" path="res://Assets/Audio/SFX/UI/fx_Event_Menu_Select_2.wav" id="9_vkv3o"]
 [ext_resource type="AudioStream" uid="uid://d3kqgdinorjn5" path="res://Assets/Audio/SFX/UI/fx_Event_Menu_Hover_2.wav" id="11_oyaw3"]
 [ext_resource type="AudioStream" uid="uid://cbj38b41mb37e" path="res://Assets/Audio/SFX/Council/PreChatter_1.wav" id="12_yrp1g"]
-[ext_resource type="AudioStream" uid="uid://cbiahxusvx6t2" path="res://Assets/Audio/Music/Music_Beach_1.ogg" id="13_tmfjy"]
 [ext_resource type="AudioStream" uid="uid://vwfvpd38mcrg" path="res://Assets/Audio/SFX/fx_PlaneCrash_1.wav" id="14_8638f"]
+[ext_resource type="AudioStream" uid="uid://bmo0qsu0tjot7" path="res://Assets/Audio/Music/Music_Beach_2.wav" id="16_slcw8"]
 [ext_resource type="AudioStream" uid="uid://bfhdetfasb2ij" path="res://Assets/Audio/Music/Main menu.wav" id="17_r8vmj"]
 
 [node name="Root" type="Node"]
@@ -169,6 +169,6 @@ sounds = Array[AudioStream]([ExtResource("11_oyaw3"), ExtResource("9_vkv3o"), Ex
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"Music"
 script = ExtResource("8_yr7c1")
-music = Array[AudioStream]([ExtResource("13_tmfjy"), ExtResource("17_r8vmj")])
+music = Array[AudioStream]([ExtResource("16_slcw8"), ExtResource("17_r8vmj")])
 
 [connection signal="pressed" from="OptionsMenu/c/Panel/Back" to="OptionsMenu" method="BackPressed"]
