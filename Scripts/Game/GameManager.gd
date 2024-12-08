@@ -28,3 +28,7 @@ func TogglePause():
 		add_child(pauseMenuRef)
 	else:
 		remove_child(pauseMenuRef)
+
+
+func _on_orange_animation_changed() -> void:
+	pass # Replace with function body.
