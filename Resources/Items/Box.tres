@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bse5hsp05spy3"]
+
+[ext_resource type="Texture2D" uid="uid://c5q3bf7k4d00x" path="res://Assets/Art/Items/RedBox.png" id="1_xrnuk"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="2_w6j5w"]
+
+[resource]
+script = ExtResource("2_w6j5w")
+name = "Jewelry Box"
+icon = ExtResource("1_xrnuk")
+description = "This had all of my valuables in it but the hinge was very loose..."
+color = 0
+shape = 1
+material = 0

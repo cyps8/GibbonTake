@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://sdfpxlgticsq"]
+
+[ext_resource type="Texture2D" uid="uid://dtswhepcajtqb" path="res://Assets/Art/Items/WteringCan.png" id="1_7hmqo"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="2_6o15u"]
+
+[resource]
+script = ExtResource("2_6o15u")
+name = "Watering Can"
+icon = ExtResource("1_7hmqo")
+description = "I used this to water my flowers! It's very heavy when full!"
+color = 1
+shape = 1
+material = 3

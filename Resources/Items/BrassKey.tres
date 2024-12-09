@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c2r62fj66tvu2"]
+
+[ext_resource type="Texture2D" uid="uid://dw83ptdbf63w1" path="res://Assets/Art/Items/BrassKey.png" id="1_lsl7m"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="2_3ekyv"]
+
+[resource]
+script = ExtResource("2_3ekyv")
+name = "Home Key"
+icon = ExtResource("1_lsl7m")
+description = "This is the key to my house! I forgot if I locked it..."
+color = 0
+shape = 1
+material = 3

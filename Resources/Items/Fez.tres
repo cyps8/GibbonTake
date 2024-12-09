@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dntm2ljcnjxpe"]
 
 [ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="1_jo8i1"]
-[ext_resource type="Texture2D" uid="uid://dndwa5a8f1j2m" path="res://Assets/Art/Other/Fez Hat.png" id="1_ryx36"]
+[ext_resource type="Texture2D" uid="uid://duch1c5y2cffx" path="res://Assets/Art/Items/Fez.png" id="1_uumwf"]
 
 [resource]
 script = ExtResource("1_jo8i1")
 name = "Fez"
-icon = ExtResource("1_ryx36")
+icon = ExtResource("1_uumwf")
 description = "This is my hat! It's very important to me..."
 color = 0
 shape = 0

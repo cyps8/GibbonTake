@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://d3yyosxcpacn8"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ctbihymj35b7d"]
 
-[ext_resource type="Texture2D" uid="uid://bcmemyidx2jp0" path="res://Assets/Art/Other/Ruby.png" id="1_1q7vq"]
 [ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="1_dixlu"]
+[ext_resource type="Texture2D" uid="uid://da85by7wgqnk4" path="res://Assets/Art/Items/Ruby.png" id="1_jkia3"]
 
 [resource]
 script = ExtResource("1_dixlu")
 name = "Ruby"
-icon = ExtResource("1_1q7vq")
-description = "A precious ruby! This would be worth so much if I was trading with humans..."
+icon = ExtResource("1_jkia3")
+description = "This is super valuable! The apes don't know it's worth"
 color = 0
 shape = 1
-material = 0
+material = 3

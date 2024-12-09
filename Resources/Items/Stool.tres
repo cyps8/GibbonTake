@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://3ww2q5q2brsi"]
+
+[ext_resource type="Texture2D" uid="uid://d1v8h46fyejad" path="res://Assets/Art/Items/WoodenStool.png" id="1_0hels"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="2_qeex7"]
+
+[resource]
+script = ExtResource("2_qeex7")
+name = "Stool"
+icon = ExtResource("1_0hels")
+description = "I need this to help me reach the top shelf, always handy!"
+color = 2
+shape = 1
+material = 0

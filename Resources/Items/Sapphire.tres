@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://myqofhtbmi6m"]
+
+[ext_resource type="Texture2D" uid="uid://crfoyb10dafxe" path="res://Assets/Art/Items/Sapphire.png" id="1_5yn71"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="2_4w03c"]
+
+[resource]
+script = ExtResource("2_4w03c")
+name = "Sapphire"
+icon = ExtResource("1_5yn71")
+description = "This is super valuable! The apes don't know it's worth"
+color = 1
+shape = 1
+material = 3

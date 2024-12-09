@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cwpwrovomdvyl"]
 
+[ext_resource type="Texture2D" uid="uid://d1nvk5xt77sqe" path="res://Assets/Art/Items/RedPlasticCar.png" id="1_8btek"]
 [ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="1_gdfj0"]
-[ext_resource type="Texture2D" uid="uid://bcfbtxd3ktox5" path="res://Assets/Art/Other/Red car.png" id="1_sperc"]
 
 [resource]
 script = ExtResource("1_gdfj0")
 name = "Red Car"
-icon = ExtResource("1_sperc")
-description = "Some childs toy car, I used to have one just like this when I was 4!"
+icon = ExtResource("1_8btek")
+description = "My toy car, I've had it since I was 4!"
 color = 0
 shape = 1
-material = 1
+material = 2

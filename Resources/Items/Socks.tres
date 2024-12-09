@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bbt6kenae2ma8"]
+
+[ext_resource type="Texture2D" uid="uid://bw8c7fskfc0w6" path="res://Assets/Art/Items/Socks.png" id="1_qn2ct"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="2_3ocg4"]
+
+[resource]
+script = ExtResource("2_3ocg4")
+name = "Socks"
+icon = ExtResource("1_qn2ct")
+description = "My favourite pair of striped socks, perfect for situations like these."
+color = 1
+shape = 0
+material = 1

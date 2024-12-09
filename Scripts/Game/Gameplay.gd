@@ -199,7 +199,7 @@ func StartGame():
 
 func SpawnHat():
 	var item = itemIns.instantiate() as Item
-	item.SetData(itemList[7])
+	item.SetData(itemList[0])
 	Inventory.ins.AddItem(item)
 	item.global_position = Inventory.ins.GetRandomBagPos() - (item.size / 2)
 	wantedItem = item.data

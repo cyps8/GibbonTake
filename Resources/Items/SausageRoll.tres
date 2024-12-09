@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://hx5mme0gclci"]
+
+[ext_resource type="Texture2D" uid="uid://ri3k8qd3dw6q" path="res://Assets/Art/Items/SausageRoll.png" id="1_8tkl7"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="2_ftxom"]
+
+[resource]
+script = ExtResource("2_ftxom")
+name = "Sausage Roll"
+icon = ExtResource("1_8tkl7")
+description = "I got this from my VEGAN sausage roll from my favourite local bakery"
+color = 0
+shape = 0
+material = 0

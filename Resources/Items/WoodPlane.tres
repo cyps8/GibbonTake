@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://qhn2k1qflk7v"]
+
+[ext_resource type="Texture2D" uid="uid://cvlk5i4sn4up4" path="res://Assets/Art/Items/BlueWoodenPlane.png" id="1_3supu"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="2_tcqhh"]
+
+[resource]
+script = ExtResource("2_tcqhh")
+name = "Toy Plane"
+icon = ExtResource("1_3supu")
+description = "A wooden plane! If only I could use it to fly out of here..."
+color = 1
+shape = 1
+material = 0

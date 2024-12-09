@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dtjs3rtl5d283"]
 
+[ext_resource type="Texture2D" uid="uid://b2smv6jcnceah" path="res://Assets/Art/Items/PlasticBanana.png" id="1_4v6r2"]
 [ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="1_7veod"]
-[ext_resource type="Texture2D" uid="uid://die76cnbugwpq" path="res://Assets/Art/Other/Yellow banana.png" id="1_cyhpr"]
 
 [resource]
 script = ExtResource("1_7veod")
 name = "Banana"
-icon = ExtResource("1_cyhpr")
-description = "A bunch of plastic bananas! Hopefully the apes don't try to eat them!"
+icon = ExtResource("1_4v6r2")
+description = "A singlular plastic banana! Hopefully the apes don't try to eat it!"
 color = 0
 shape = 0
 material = 2

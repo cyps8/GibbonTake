@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cm2sme5grghn0"]
+
+[ext_resource type="Texture2D" uid="uid://rs43h753bt28" path="res://Assets/Art/Items/IronOre.png" id="1_qfaes"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="2_ociq7"]
+
+[resource]
+script = ExtResource("2_ociq7")
+name = "Iron Ore"
+icon = ExtResource("1_qfaes")
+description = "I was digging in a hole and found this! Idk what I'll do with it tho"
+color = 2
+shape = 0
+material = 3

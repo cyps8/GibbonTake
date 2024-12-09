@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://d04qx2t1ag7cg"]
+
+[ext_resource type="Texture2D" uid="uid://nd7px8e6yljy" path="res://Assets/Art/Items/fiver.png" id="1_esdcj"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="2_lot78"]
+
+[resource]
+script = ExtResource("2_lot78")
+name = "Fiver"
+icon = ExtResource("1_esdcj")
+description = "I was gonna use this to buy a meal deal, kinda useless now"
+color = 1
+shape = 0
+material = 2

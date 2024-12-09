@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dao2vd2ty1lqb"]
 
-[ext_resource type="Texture2D" uid="uid://bl0hlaged8huy" path="res://Assets/Art/Other/Teddybear.png" id="1_afnq4"]
 [ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="1_el2wx"]
+[ext_resource type="Texture2D" uid="uid://cpdvcjp8eictq" path="res://Assets/Art/Items/OrangeBear.png" id="1_l6wj2"]
 
 [resource]
 script = ExtResource("1_el2wx")
 name = "Teddy bear"
-icon = ExtResource("1_afnq4")
+icon = ExtResource("1_l6wj2")
 description = "A cute teddy bear! I'm sure it misses it's owner..."
-color = 2
+color = 0
 shape = 0
 material = 1

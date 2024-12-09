@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ck36s03jfjhxi"]
+
+[ext_resource type="Texture2D" uid="uid://pm4fsxtb38r3" path="res://Assets/Art/Items/WoodenRhino.png" id="1_uss3u"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="2_kxuq4"]
+
+[resource]
+script = ExtResource("2_kxuq4")
+name = "Rhinoceros Statue"
+icon = ExtResource("1_uss3u")
+description = "This decoration has been on my shelf ever since I was a wee lad"
+color = 2
+shape = 0
+material = 0

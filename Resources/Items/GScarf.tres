@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://oi6d8ois8vg7"]
+
+[ext_resource type="Texture2D" uid="uid://cxf5uqh3jj4er" path="res://Assets/Art/Items/GreyScarf.png" id="1_7b6vv"]
+[ext_resource type="Script" path="res://Scripts/Game/ItemData.gd" id="2_1md2q"]
+
+[resource]
+script = ExtResource("2_1md2q")
+name = "Scarf"
+icon = ExtResource("1_7b6vv")
+description = "This has kept me warm through so many chilly winters, but it's so hot here!"
+color = 2
+shape = 0
+material = 1
